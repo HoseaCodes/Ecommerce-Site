@@ -17,6 +17,7 @@ app.use(fileUpload({
 
 //Routes
 app.use('/user', require('./routes/user'));
+app.use('/api', require('./routes/category'));
 
 // Connect to ongodb
 const URI = process.env.MONGODB_URL
