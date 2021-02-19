@@ -5,7 +5,9 @@ const jwt = require('jsonwebtoken');
 const userCtrl = {
     register,
     refreshToken,
-    login
+    login,
+    logout,
+    getUser
 }
 
 async function register(req, res) {
@@ -85,6 +87,27 @@ async function login(req, res) {
         })
         res.json({ accesstoken })
         // res.json({ msg: "Login successful" })
+
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+}
+
+async function logout(req, res) {
+    try {
+        res.clearCookie('refreshtoken', { path: '/user/refresh_token' })
+        return res.json({ msg: "Logged Out" })
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+}
+
+async function getUser(req, res) {
+    try {
+        const user = await Users.findById(req.user.id).select('-password')
+        if (!user) return res.status(400).json({ msg: "User does not exist" })
+
+        res.json(req.user)
 
     } catch (err) {
         return res.status(500).json({ msg: err.message })
