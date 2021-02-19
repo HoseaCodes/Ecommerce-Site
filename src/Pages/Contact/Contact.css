@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "NewYork";
+    src: url("../../Fonts/newyork/newyork.woff");
+    }
+@font-face {
+    font-family: "Oregon";
+    src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+    }
+    @font-face {
+        font-family: 'Monday';
+        src: url('../../Fonts/Monday/Monday_Routines.woff2') format('woff2'),
+             url('../../Fonts/Monday/MondayRoutines.woff') format('woff'),
+             url('../../Fonts/Monday/Monday_Routines.ttf') format('truetype');
+        }
+@font-face {
+    font-family: "Photograph";
+    src: url("../../Fonts/Photograph/Photograph\ Signature.ttf");
+    src: url('../../Fonts//Photograph/Photograph\ Signature.ttf') format('truetype'),
+    url('../../Fonts//Photograph/Photograph\ Signature\ 2.eot') format('embedded-opentype'),
+    url('../../Fonts/Photograph/Photograph\ Signature\ 2.woff2') format('woff2'),
+    url('../../Fonts/Photograph/Photograph\ Signature.woff') format('woff'),
+    }
+        
+.contact-container {
+    padding: 10%;
+    padding-bottom: 5%;
+    text-transform: uppercase;
+    font-weight: 900;   
+}
+
+.contact-title {
+    font-size: 10rem;
+    padding-top: 2%;
+    font-family: 'NewYork';
+}
+
+.contact-descp {
+    font-family: 'Oregon' !important;
+    font-size: 1.5rem !important;
+}
+.contact-subtitle {
+    font-family: 'NewYork';
+    font-size: 10rem;
+    padding-left: 14%;
+}
+.contact-style {
+    font-family: 'Photograph' !important;
+    text-transform: capitalize !important;
+    margin-top: -7%;
+    padding-left: 38%;
+    font-size: 12rem;
+    color: lavender;
+}
+.contact-items {
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+padding-top: 5%;
+font-family: 'Oregon';
+}
+
+.contact-item {
+    padding-right: 5%;
+}
+
+.contact-item h4 {
+    font-weight: 700;
+    letter-spacing: .2rem !important;
+    font-size: 1.5rem;
+}
+
+.contact-item p {
+    letter-spacing: .2rem !important;
+    text-transform: capitalize;
+
+}
+
+.contact-item a {
+    text-transform: lowercase;
+    color: black;
+}
