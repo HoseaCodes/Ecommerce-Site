@@ -17,7 +17,7 @@ const DetailProduct = () => {
         }
     }, [params.id, products])
 
-    console.log(detailProduct)
+    // console.log(detailProduct)
 
     if (detailProduct.length === 0) return null;
 

@@ -44,7 +44,6 @@ const NavBar = (props) => {
                         <Link to="/about" className="nav-item" >About</Link>
                         <Link to="/contact" className="nav-item">Contact</Link>
                         <Link to="/contact" className="nav-item">Keep In Touch</Link>
-                        <Link to="/signin" className="nav-signin">Sign In</Link>
                     </Wrapper>
                 </div>
             </nav>

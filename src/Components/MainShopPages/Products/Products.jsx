@@ -7,13 +7,14 @@ const Products = () => {
 
     const state = useContext(GlobalState)
     const [products] = state.productsAPI.products
-    console.log(state)
+    const [isAdmin] = state.userAPI.isAdmin
     return (
         <>
             <div className="products">
                 {
                     products.map(product => {
-                        return <ProductItem key={product._id} product={product} />
+                        return <ProductItem key={product._id} product={product}
+                            isAdmin={isAdmin} />
                     })
                 }
 

@@ -7,7 +7,8 @@ const userCtrl = {
     refreshToken,
     login,
     logout,
-    getUser
+    getUser,
+    addCart
 }
 
 async function register(req, res) {
@@ -107,8 +108,21 @@ async function getUser(req, res) {
         const user = await Users.findById(req.user.id).select('-password')
         if (!user) return res.status(400).json({ msg: "User does not exist" })
 
-        res.json(req.user)
+        res.json(user)
 
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+}
+
+async function addCart(req, res) {
+    try {
+        const user = await Users.findById(req.user.id)
+        if (!user) return res.status(400).json({ msg: "User does not exist" })
+
+        await Users.findByIdAndUpdate({ _id: req.user.id }, {
+            cart: req.body.cart
+        })
     } catch (err) {
         return res.status(500).json({ msg: err.message })
     }

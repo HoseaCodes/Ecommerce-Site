@@ -32,3 +32,7 @@
 @import url("./Components/MainShopPages/Products/Products.css");
 
 @import url("./Components/MainShopPages//DetailProduct/DetailProduct.css");
+
+@import url("./Components/MainShopPages/Auth/Login.css");
+
+@import url("./Components//MainShopPages/Cart/Cart.css");

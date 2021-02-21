@@ -59,10 +59,18 @@ export default class App extends Component {
               exact
               path="/"
               render={() => (
-                <Splash
+                <Shop
                 />
               )}
             />
+            {/* <Route
+              exact
+              path="/"
+              render={() => (
+                <Splash
+                />
+              )}
+            /> */}
             <Route
               exact
               path="/home"
@@ -79,14 +87,14 @@ export default class App extends Component {
                 />
               )}
             />
-            <Route
+            {/* <Route
               exact
               path="/shop"
               render={() => (
                 <Shop
                 />
               )}
-            />
+            /> */}
             <Route
               exact
               path="/contact"

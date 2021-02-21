@@ -13,7 +13,7 @@
     width: calc(100% - 15px);
     height: calc(100% - 15px);
     border: 2px solid #fff;
-    border-top: 2px solid crimson;
+    border-top: 2px solid lavender;
     border-radius: 50%;
     animation: rotate 10s linear infinite alternate-reverse;
 }

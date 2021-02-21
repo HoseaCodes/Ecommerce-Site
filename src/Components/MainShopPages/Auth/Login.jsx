@@ -11,6 +11,7 @@ const Login = () => {
 
     const onChangeInput = e => {
         const { name, value } = e.target;
+        console.log(user)
         setUser({ ...user, [name]: value })
     }
 
@@ -21,16 +22,17 @@ const Login = () => {
 
             localStorage.setItem('firstLogin', true)
 
-            window.location.href = "/products";
+            window.location.href = "/";
 
         } catch (err) {
-            alert(err.response.data.msg)
+            alert(err)
         }
     }
 
     return (
         <div className="login-page">
             <form onSubmit={loginSubmit}>
+                <h2>Login</h2>
                 <input type="email" name="email" required
                     placeholder="Email" value={user.email} onChange={onChangeInput} />
 
