@@ -44,7 +44,7 @@ const mainCarousel = () => {
     return (
         <Carousel>
             {group.map((item) => {
-                console.log(item)
+                // console.log(item)
                 return (<Carousel.Item>
                     <Wrapper>
                         <img

@@ -10,6 +10,14 @@
   animation: load8 1.1s infinite linear;
 }
 
+.App {
+  max-width: 1430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-shadow: 00 35px #eee;
+}
+
 @keyframes load8 {
   0% {
     transform: rotate(0deg);
@@ -18,3 +26,9 @@
     transform: rotate(360deg);
   }
 }
+
+@import url("./Components/Headers/Header.css");
+
+@import url("./Components/MainShopPages/Products/Products.css");
+
+@import url("./Components/MainShopPages//DetailProduct/DetailProduct.css");

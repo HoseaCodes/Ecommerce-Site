@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { DataProvider } from './GlobalState';
 import './App.css';
 import Home from './Pages/Home/Home';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
+import Shop from './Pages/Shop/Shop';
 import Splash from './Pages/Splash/Slpash';
 import Error from './Pages/Error/Error';
 import Particles from "./Components/Particles/Particles";
@@ -23,7 +25,7 @@ const styles = {
 };
 
 const Loader = () => (
-  <div class="divLoader" style={styles.root}>
+  <div className="divLoader" style={styles.root}>
     {/* <svg class="svgLoader" viewBox="0 0 100 100" width="10em" height="10em">
       <path stroke="none" d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#51CACC" transform="rotate(179.719 50 51)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></path>
     </svg> */}
@@ -49,6 +51,8 @@ export default class App extends Component {
     return (
       <>
         {this.state.loading ? <Loader /> : null}
+        {/* <DataProvider> */}
+
         <BrowserRouter>
           <Switch>
             <Route
@@ -77,6 +81,14 @@ export default class App extends Component {
             />
             <Route
               exact
+              path="/shop"
+              render={() => (
+                <Shop
+                />
+              )}
+            />
+            <Route
+              exact
               path="/contact"
               render={() => (
                 <Contact
@@ -86,6 +98,7 @@ export default class App extends Component {
             <Error />
           </Switch>
         </BrowserRouter>
+        {/* </DataProvider> */}
       </>
     );
   }

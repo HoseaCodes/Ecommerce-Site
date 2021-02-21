@@ -18,7 +18,7 @@ class Canvas extends Component {
     };
     render() {
         const { width, height } = this.state;
-        console.log(width, height);
+        // console.log(width, height);
         return (
             <Particles
                 {...this.state}
