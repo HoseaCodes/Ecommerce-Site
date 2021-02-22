@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const categoryCtrl = require('../controllers/category');
-const categoryModel = require('../models/categoryModel');
 const auth = require('../utils/auth')
 const authAdmin = require('../utils/authAdmin')
 

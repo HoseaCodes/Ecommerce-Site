@@ -20,6 +20,7 @@ app.use('/user', require('./routes/user'));
 app.use('/api', require('./routes/category'));
 app.use('/api', require('./routes/product'));
 app.use('/api', require('./routes/upload'));
+app.use('/api', require('./routes/payment'));
 
 // Connect to ongodb
 const URI = process.env.MONGODB_URL
