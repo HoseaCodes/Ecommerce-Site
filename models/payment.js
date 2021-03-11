@@ -29,7 +29,7 @@ const paymentSchema = new mongoose.Schema({
     },
     status: {
         type: Boolean,
-        default: true
+        default: false
     },
 
 },

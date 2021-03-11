@@ -19,6 +19,7 @@
     "express-fileupload": "^1.2.1",
     "firebase": "^8.2.5",
     "jsonwebtoken": "^8.5.1",
+    "materialize-css": "^1.0.0-rc.2",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.17",
     "react": "^16.14.0",
@@ -30,10 +31,12 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-transition-group": "^4.4.1",
+    "react-vis": "^1.11.7",
     "styled-components": "^5.2.1"
   },
   "scripts": {
     "dev": "nodemon server.js",
+    "server": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

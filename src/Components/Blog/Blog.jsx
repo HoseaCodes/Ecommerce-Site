@@ -5,12 +5,12 @@ import { blogData } from './BlogData';
 // import firebase from '../../Config/firebase';
 import InfiniteScroll from "react-infinite-scroll-component";
 
-const style = {
-    height: 30,
-    border: "1px solid green",
-    margin: 6,
-    padding: 8
-};
+// const style = {
+//     height: 30,
+//     border: "1px solid green",
+//     margin: 6,
+//     padding: 8
+// };
 
 // const db = firebase.firestore();
 

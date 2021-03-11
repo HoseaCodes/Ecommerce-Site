@@ -6,7 +6,7 @@ import post from '../../Images/anime.jpg';
 
 const DropDownMenu = () => {
 
-    const [activeMenu, setActiveMenu] = useState('main')
+    const [activeMenu] = useState('main')
 
     return (
         <div className="dropdown">

@@ -11,7 +11,6 @@ const Login = () => {
 
     const onChangeInput = e => {
         const { name, value } = e.target;
-        console.log(user)
         setUser({ ...user, [name]: value })
     }
 
@@ -19,13 +18,11 @@ const Login = () => {
         e.preventDefault()
         try {
             await axios.post('/user/login', { ...user })
-
             localStorage.setItem('firstLogin', true)
-
             window.location.href = "/";
 
         } catch (err) {
-            alert(err)
+            alert(err.response.data.msg)
         }
     }
 

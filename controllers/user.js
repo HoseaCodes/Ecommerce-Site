@@ -1,4 +1,5 @@
 const Users = require('../models/userModel');
+const Payments = require('../models/payment');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -8,16 +9,15 @@ const userCtrl = {
     login,
     logout,
     getUser,
-    addCart
+    addCart,
+    history
 }
 
 async function register(req, res) {
+
     try {
         const { name, email, password } = req.body;
-        console.log(req.body)
-        console.log(name)
-        console.log(email)
-        console.log(password)
+
         const user = await Users.findOne({ email })
         if (user) return res.status(400).json({ msg: "The email already exists" })
 
@@ -40,11 +40,10 @@ async function register(req, res) {
 
         res.cookie('refreshtoken', refreshtoken, {
             httpOnly: true,
-            path: '/user/refresh_token'
+            path: '/user/refresh_token',
+            maxAge: 7 * 25 * 60 * 60 * 1000
         })
-        // res.json({ password, passwordHash })
         res.json({ accesstoken })
-        // res.json({ msg: "Register Successful" })
 
     } catch (err) {
         return res.status(500).json({ msg: err.message })
@@ -84,10 +83,10 @@ async function login(req, res) {
 
         res.cookie('refreshtoken', refreshtoken, {
             httpOnly: true,
-            path: '/user/refresh_token'
+            path: '/user/refresh_token',
+            maxAge: 7 * 25 * 60 * 60 * 1000
         })
         res.json({ accesstoken })
-        // res.json({ msg: "Login successful" })
 
     } catch (err) {
         return res.status(500).json({ msg: err.message })
@@ -123,13 +122,23 @@ async function addCart(req, res) {
         await Users.findByIdAndUpdate({ _id: req.user.id }, {
             cart: req.body.cart
         })
+        return res.json({ msg: "Added to cart" })
     } catch (err) {
         return res.status(500).json({ msg: err.message })
     }
 }
 
+async function history(req, res) {
+    try {
+        const history = await Payments.find({ user_id: req.user.id })
+
+        return res.json(history)
+    } catch (err) {
+        return res.status(500).json({ msg: err.message })
+    }
+}
 const createAccessToken = (user) => {
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '1d' })
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '10m' })
 }
 const createRefreshToken = (user) => {
     return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '7d' })

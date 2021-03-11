@@ -14,12 +14,12 @@ cloudinary.config({
 router.post("/upload", auth, authAdmin, (req, res) => {
     try {
         console.log(req.files)
-        if (!req.files || Object.keys(req.files).length === 0) return res.status(400).send('No files were uploaded.')
+        if (!req.files || Object.keys(req.files).length === 0) return res.status(400).send({ msg: "No files were uploaded." })
 
         const file = req.files.file;
         if (file.size > 1024 * 1024) {
             removeTmp(file.tempFilePath)
-            return res.status(400).json({ msg: "size too large" })
+            return res.status(400).json({ msg: "File size too large" })
         }
 
         if (file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png') {
@@ -27,7 +27,7 @@ router.post("/upload", auth, authAdmin, (req, res) => {
             return res.status(400).json({ msg: "File format is incorrect" })
         }
 
-        cloudinary.v2.uploader.upload(file.tempFilePath, { folder: "test" }, async (err, result) => {
+        cloudinary.v2.uploader.upload(file.tempFilePath, { folder: "PolticallySavvy" }, async (err, result) => {
             if (err) throw err;
 
             removeTmp(file.tempFilePath)
@@ -41,7 +41,7 @@ router.post("/upload", auth, authAdmin, (req, res) => {
 })
 
 //image delete
-router.post("/destory", (req, res) => {
+router.post("/destory", auth, authAdmin, (req, res) => {
     try {
         const { public_id } = req.body
         if (!public_id) return res.status(400).json({ msg: 'No images Selected' })

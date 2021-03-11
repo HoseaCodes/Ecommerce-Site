@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { DataProvider } from './GlobalState';
+// import { DataProvider } from './GlobalState';
 import './App.css';
 import Home from './Pages/Home/Home';
+import Admin from './Pages/Admin/Admin';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Shop from './Pages/Shop/Shop';
-import Splash from './Pages/Splash/Slpash';
+// import Splash from './Pages/Splash/Slpash';
 import Error from './Pages/Error/Error';
 import Particles from "./Components/Particles/Particles";
 
@@ -76,6 +77,14 @@ export default class App extends Component {
               path="/home"
               render={() => (
                 <Home
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/admin"
+              render={() => (
+                <Admin
                 />
               )}
             />

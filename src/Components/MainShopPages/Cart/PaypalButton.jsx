@@ -1,7 +1,7 @@
 import React from 'react';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 
-export default class MyApp extends React.Component {
+export default class PaypalButton extends React.Component {
     render() {
         const onSuccess = (payment) => {
             // Congratulation, it came here means everything's fine!
@@ -32,6 +32,10 @@ export default class MyApp extends React.Component {
 
             // sandbox: process.env.PAYPAL_CLIENT_ID,
             // production: process.env.PAYPAL_SECRET,
+            sandbox: "AYh1rF4-sDxJELVWbybjhAT8QpLrLM_Sb0tjXpq9IGDXpyR0C5y2v-q8AZ9Q2p_Uo_Fu_0TEYugKI98X",
+            production: "EB7Ppt_qTzPSm4huXc4SZ6JjLpt09wp8S7WXbmgbQiBE-J7zD9Q2tHTeBCKBMha7BujrEutXxuYmvmd6",
+
+
         }
         // In order to get production's app-ID, you will have to send your app to Paypal for approval first
         // For sandbox app-ID (after logging into your developer account, please locate the "REST API apps" section, click "Create App"):

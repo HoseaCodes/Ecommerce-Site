@@ -5,12 +5,13 @@ const Users = require('../models/userModel');
 
 const paymentCtrl = {
     getPayments,
-    createPayment
+    createPayment,
+    sold
 }
 
 async function getPayments(req, res) {
     try {
-        const payment = await Payments.find()
+        const payments = await Payments.find()
         res.json(payments)
     } catch (err) {
         return res.status(500).json({ msg: err.message })
@@ -19,7 +20,7 @@ async function getPayments(req, res) {
 
 async function createPayment(req, res) {
     try {
-        const user = await (await Users.findById(req.user.id)).isSelected('name email')
+        const user = await Users.findById(req.user.id).select('name email')
         if (!user) return res.status(400).json({ msg: "User does not exist" })
 
         const { cart, paymentID, address } = req.body
@@ -29,10 +30,22 @@ async function createPayment(req, res) {
             user_id: _id, name, email, cart, paymentID, address
         })
 
-        res.json({ newPayment })
+        cart.filter(item => {
+            return sold(item._id, item.quantity, item.sold)
+        })
+
+        await newPayment.save()
+        res.json({ msg: "Payment Success" })
+
     } catch (err) {
         return res.status(500).json({ msg: err.message })
     }
+}
+
+async function sold(id, quantity, oldSold) {
+    await Products.findByIdAndUpdate({ _id: id }, {
+        sold: quantity + oldSold
+    })
 }
 
 module.exports = paymentCtrl;

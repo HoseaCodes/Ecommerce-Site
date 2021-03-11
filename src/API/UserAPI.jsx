@@ -5,6 +5,7 @@ function UserAPI(token) {
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [isAdmin, setIsAdmin] = useState(false)
     const [cart, setCart] = useState([])
+    const [history, setHistory] = useState([])
 
     useEffect(() => {
         if (token) {
@@ -26,6 +27,7 @@ function UserAPI(token) {
             getUser()
         }
     }, [token])
+
 
     const addCart = async (product) => {
         if (!isLoggedIn) return alert("Please login to continue buying")
@@ -49,7 +51,8 @@ function UserAPI(token) {
         isLoggedIn: [isLoggedIn, setIsLoggedIn],
         isAdmin: [isAdmin, setIsAdmin],
         cart: [cart, setCart],
-        addCart: addCart
+        addCart: addCart,
+        history: [history, setHistory],
     }
 
 

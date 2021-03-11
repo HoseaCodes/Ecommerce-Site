@@ -14,4 +14,6 @@ router.get('/infor', auth, userCtrl.getUser);
 
 router.patch('/addcart', auth, userCtrl.addCart)
 
+router.get('/history', auth, userCtrl.history)
+
 module.exports = router
