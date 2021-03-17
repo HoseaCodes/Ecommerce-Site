@@ -4,7 +4,7 @@ import Savvy2 from '../../Images/Savvy2.png';
 import Savvy3 from '../../Images/Savvy3.png';
 import './HomeSlider.css';
 
-
+// Home page slider for content and images
 const HomeSilder = () => {
     const [autoplay, setAutoplay] = useState(true);
 
@@ -21,14 +21,6 @@ const HomeSilder = () => {
             <address> - {quote.name}</address>
         </div>
     );
-    // const [next, setNext] = useState(0)
-    // const goLeft = () => {
-    //     x === 0 ? setX(-100 * (quotes.length - 1)) : setX(x + 100);
-    // };
-    // const goRight = () => {
-    //     x === -100 * (quotes.length - 1) ? setX(0) : setX(x - 100);
-
-    // };
 
     return (
         <>
@@ -41,8 +33,6 @@ const HomeSilder = () => {
                 </div>
                 <div className="homepage-slider-quote">
                     {quotes}
-                    {/* <button className='btn-left' onClick={goLeft}> ‹ </button>
-                    <button className='btn-right' onClick={goRight}> › </button> */}
                 </div>
             </div>
 

@@ -2,6 +2,7 @@ import React from 'react'
 import './sidebar.css';
 import Avatar from '../../Images/anime.jpg'
 
+//Dashboard Sidebar nav
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
     return (
         <div className={sidebarOpen ? "sidebar-responsive" : ""} id="sidebar">

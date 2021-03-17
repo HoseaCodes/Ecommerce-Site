@@ -4,6 +4,8 @@ import './main.css';
 import Avatar from '../../Images/anime.jpg'
 import Chart from './chart';
 
+
+//Dashboard View
 const Main = ({ sidebarOpen, openSidebar }) => {
 
     return (

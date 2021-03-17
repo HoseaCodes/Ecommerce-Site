@@ -44,7 +44,6 @@ const mainCarousel = () => {
     return (
         <Carousel>
             {group.map((item) => {
-                // console.log(item)
                 return (<Carousel.Item>
                     <Wrapper>
                         <img
@@ -79,30 +78,6 @@ const mainCarousel = () => {
 
 
             </div>
-            {/* <Carousel.Item>
-                <img
-                    className="d-block w-35"
-                    src={Carousel2}
-                    alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-                <img
-                    className="d-block w-35"
-                    src={Carousel3}
-                    alt="Third slide"
-                />
-
-                <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </Carousel.Caption>
-            </Carousel.Item> */}
         </Carousel>
     )
 }

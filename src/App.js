@@ -25,11 +25,9 @@ const styles = {
   }
 };
 
+// On page load loading feature
 const Loader = () => (
   <div className="divLoader" style={styles.root}>
-    {/* <svg class="svgLoader" viewBox="0 0 100 100" width="10em" height="10em">
-      <path stroke="none" d="M10 50A40 40 0 0 0 90 50A40 42 0 0 1 10 50" fill="#51CACC" transform="rotate(179.719 50 51)"><animateTransform attributeName="transform" type="rotate" calcMode="linear" values="0 50 51;360 50 51" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animateTransform></path>
-    </svg> */}
     <Particles />
   </div>
 );
@@ -52,8 +50,6 @@ export default class App extends Component {
     return (
       <>
         {this.state.loading ? <Loader /> : null}
-        {/* <DataProvider> */}
-
         <BrowserRouter>
           <Switch>
             <Route
@@ -64,14 +60,6 @@ export default class App extends Component {
                 />
               )}
             />
-            {/* <Route
-              exact
-              path="/"
-              render={() => (
-                <Splash
-                />
-              )}
-            /> */}
             <Route
               exact
               path="/home"
@@ -96,14 +84,6 @@ export default class App extends Component {
                 />
               )}
             />
-            {/* <Route
-              exact
-              path="/shop"
-              render={() => (
-                <Shop
-                />
-              )}
-            /> */}
             <Route
               exact
               path="/contact"
@@ -115,7 +95,6 @@ export default class App extends Component {
             <Error />
           </Switch>
         </BrowserRouter>
-        {/* </DataProvider> */}
       </>
     );
   }

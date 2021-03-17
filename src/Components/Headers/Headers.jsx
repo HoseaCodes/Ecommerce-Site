@@ -6,6 +6,7 @@ import Cart from './icon/cart.svg';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 
+//Handle sub nav w/Admin
 const Header = () => {
     const state = useContext(GlobalState)
     const [isLoggedIn] = state.userAPI.isLoggedIn

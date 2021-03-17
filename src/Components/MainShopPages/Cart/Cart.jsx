@@ -59,7 +59,7 @@ const Cart = () => {
             addToCart(cart)
         }
     }
-
+    //after transaction is approved function
     const tranSuccess = async (payment) => {
         console.log(payment)
         const { paymentID, address } = payment;

@@ -10,9 +10,6 @@ class NewModal extends React.Component {
         this.state = {
             show: true,
         };
-
-        // this.handleClose = this.handleClose.bind(this);
-        // this.handleShow = this.handleShow.bind(this);
     }
 
     handleClose() {
@@ -35,7 +32,6 @@ class NewModal extends React.Component {
 
         return (
             <div>
-                {/* show={this.state.show} */}
                 <Modal
                     aria-labelledby="contained-modal-title-vcenter"
                     centered
@@ -66,9 +62,6 @@ class Subscription extends React.Component {
         this.state = {
             modalLoading: false
         };
-
-        // this.handleClose = this.handleClose.bind(this);
-        // this.handleShow = this.handleShow.bind(this);
     }
 
     componentDidMount() {

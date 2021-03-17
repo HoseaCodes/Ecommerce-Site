@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { GlobalState } from '../../../GlobalState';
-// import { Link } from 'react-router-dom';
 
 function OrderDetails() {
     const state = useContext(GlobalState)

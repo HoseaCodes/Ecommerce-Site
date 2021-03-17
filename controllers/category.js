@@ -22,6 +22,7 @@ async function createCategory(req, res) {
         //Admin CRUD functions
         //Role 1 = Admin
         const { name } = req.body;
+        //Categories only have a name element
         const category = await Category.findOne({ name })
         if (category) return res.status(400).json({ msg: "This category already exists." })
 
@@ -38,6 +39,7 @@ async function createCategory(req, res) {
 async function deleteCategory(req, res) {
     try {
         const products = await Products.findOne({ category: req.params.id })
+        // You cannot delete a category if it has products associated with it.
         if (products) return res.status(400).json({ msg: 'Please delete all products with a relationship.' })
         await Category.findByIdAndDelete(req.params.id)
         res.json({ msg: "Deleted a category" })

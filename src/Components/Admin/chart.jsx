@@ -2,6 +2,8 @@ import React from 'react'
 import '../../../node_modules/react-vis/dist/style.css';
 import { XAxis, XYPlot, LineSeries, YAxis, VerticalGridLines, HorizontalGridLines } from 'react-vis'
 
+
+// Display information of relavent sales data
 const Chart = ({ sidebarOpen, openSidebar }) => {
     const data = [
 

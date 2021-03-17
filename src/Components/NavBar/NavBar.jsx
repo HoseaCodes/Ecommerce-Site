@@ -5,12 +5,9 @@ import burger from '../../Images/burger.jpg';
 import logo1 from '../../Images/logo6.png';
 import Content from './ContentBar';
 import styled from 'styled-components';
-// import Headers from '../Headers/Headers';
 import { GlobalState } from '../../GlobalState';
 import Close from '../Headers/icon/close.svg';
-// import Menu from '../Headers/icon/menu.svg';
 import axios from 'axios'
-// import { NavDropdown } from 'react-bootstrap';
 
 const NavBar = (props) => {
     const [open, setOpen] = useState("false");
@@ -34,16 +31,7 @@ const NavBar = (props) => {
         window.location.href = "/"
     }
 
-    // const adminRouter = () => {
-    //     return (
-    //         <>
-    //             <NavDropdown.Item ><Link to="/shop">View Products</Link></NavDropdown.Item >
-    //             <NavDropdown.Divider />
-    //             <NavDropdown.Item ><Link to="/create_product">Create Product</Link></NavDropdown.Item >
-    //             <NavDropdown.Item ><Link to="/category">Categories</Link></NavDropdown.Item >
-    //         </>
-    //     )
-    // }
+
     const loggedInRouter = () => {
         return (
             <>
@@ -52,9 +40,7 @@ const NavBar = (props) => {
         )
     }
 
-    // const styleMenu = {
-    //     left: menu ? 0 : '-100%'
-    // }
+
     return (
         <div className="header-nav">
             <div className='burger-nav'>
@@ -87,11 +73,7 @@ const NavBar = (props) => {
                             <img src={Close} alt="CloseButton" width="30" className="menu" />
                         </li>
                     </Wrapper>
-                    {/* <Wrapper>
 
-                        <Link to="/contact" className="nav-item">Keep In Touch</Link>
-
-                    </Wrapper> */}
                 </div>
             </nav>
 

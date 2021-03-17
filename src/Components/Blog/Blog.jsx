@@ -2,17 +2,9 @@ import React from 'react';
 import './Blog.css'
 import BlogCard from './BlogCard';
 import { blogData } from './BlogData';
-// import firebase from '../../Config/firebase';
 import InfiniteScroll from "react-infinite-scroll-component";
 
-// const style = {
-//     height: 30,
-//     border: "1px solid green",
-//     margin: 6,
-//     padding: 8
-// };
 
-// const db = firebase.firestore();
 
 class Blog extends React.Component {
     constructor(props) {
@@ -39,11 +31,6 @@ class Blog extends React.Component {
             });
         }, 1500);
     };
-
-    // componentDidMount() {
-    //     this.getMyArticles()
-    // }
-
 
 
     render() {

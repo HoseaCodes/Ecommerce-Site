@@ -4,6 +4,7 @@ import { CSSTransition } from "react-transition-group";
 import "./DropDownMenu.css"
 import post from '../../Images/anime.jpg';
 
+// Bolierplate dropdown
 const DropDownMenu = () => {
 
     const [activeMenu] = useState('main')
@@ -16,7 +17,6 @@ const DropDownMenu = () => {
                     <Link to="/blog" className="dropdown-item">Blog Tag 2 </Link>
                     <Link to="/blog" className="dropdown-item">Blog Tag 3</Link>
                     <Link to="/blog" className="dropdown-item">Blog Tag 4</Link>
-                    {/* <div className="menu-post"> */}
                     <ul className="menu-column-post">
                         <li className="menu-post">
                             <img src={post} alt="Post 1" width="180px" />
@@ -39,7 +39,6 @@ const DropDownMenu = () => {
                             <h5>Post Title</h5>
                         </li>
                     </ul>
-                    {/* </div> */}
                 </div>
 
 

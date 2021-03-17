@@ -3,9 +3,7 @@ import { GlobalState } from '../../../GlobalState';
 import ProductItem from './ProductItem/Productitem';
 import Loading from '../Utils/Loading'
 import axios from 'axios'
-// import Filters from './filters'
 import LoadMore from './loadMore'
-// import Header from '../../Headers/Headers';
 
 const Products = () => {
 
@@ -60,7 +58,6 @@ const Products = () => {
 
     return (
         <>
-            {/* <Filters /> */}
             {
                 isAdmin &&
                 <div className="delete-all">
