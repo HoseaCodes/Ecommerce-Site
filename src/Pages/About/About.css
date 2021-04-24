@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "NewYork";
+    src: url("../../Fonts/newyork/newyork.woff");
+    }
+@font-face {
+    font-family: "Oregon";
+    src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+    }
+@font-face {
+   font-family: "Photograph";
+    src: url("../../Fonts/Photograph/Photograph\ Signature.ttf");
+    src: url('../../Fonts//Photograph/Photograph\ Signature.ttf') format('truetype'),
+    url('../../Fonts//Photograph/Photograph\ Signature\ 2.eot') format('embedded-opentype'),
+    url('../../Fonts/Photograph/Photograph\ Signature\ 2.woff2') format('woff2'),
+    url('../../Fonts/Photograph/Photograph\ Signature.woff') format('woff'),
+   }
+                
+        
+.about-container {
+    display: flex;
+    padding: 4%;
+}
+
+.about-img {
+    width: 50%;
+}
+
+.about-text {
+    padding-left: 4%;
+}
+
+.about-text h2 {
+    font-family: "New York";
+    font-size: 1.5rem;
+    padding-bottom: 8%;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
+    line-height: 2;
+    font-family: "Oregon";
+    padding-bottom: 8%;
+}
+
+.about-signoff {
+    font-size: 1rem !important;
+}
+
+.about-signoff span {
+    color: purple;
+    font-family: 'Photograph' !important;
+    text-transform: capitalize !important;
+    font-size: 3rem;
+}
+.about-believe-title {
+    padding: 4%;
+    text-align: center;
+    font-family: "New York";
+}
+
+.about-quote {
+    padding-top: 4%;
+    padding-bottom: 8%;
+    width: 55%;
+    margin: 0 auto;
+    font-family: "Oregon";
+    font-size: 1.1rem;
+    letter-spacing: .05rem;
+    line-height: 2;
+}
+
+.about-quote.name {
+    padding-top: 0%;
+}
+
+.about-quote-container {
+    display: flex;
+    width: 85%;
+    margin-top: 0%;
+    padding-top: 0%;
+}
+
+.about-quote-div {
+    border: 1px solid gray;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    margin-right: 4%;
+    padding: 8%;
+}
+.about-hr {
+    margin-bottom: 0% !important;
+    color: gray;
+}
+
+.about-quote-container img {
+    padding: 8%;
+    width: 40%;
+    margin: 0 auto;
+}
