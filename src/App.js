@@ -89,7 +89,7 @@ export default class App extends Component {
                   />
                 )}
               />
-              <Route path="/proucts" exact component={Products} />
+              <Route path="/products" exact component={Products} />
               <Route path="/detail/:id" exact component={DetailProduct} />
               <Route path="/login" exact component={this.props.isLoggedIn ? NotFound : Login} />
               <Route path="/register" exact component={this.props.isLoggedIn ? NotFound : Register} />
@@ -99,33 +99,33 @@ export default class App extends Component {
               <Route path="/history" exact component={this.props.isLoggedIn ? OrderHistory : NotFound} />
               <Route path="/history/:id" exact component={this.props.isLoggedIn ? OrderDetails : NotFound} />
               <Route path="/cart" exact component={Cart} />
-              <Route path="*" exact component={NotFound} />
+              {/* <Route path="*" exact component={NotFound} /> */}
+              <Route
+                exact
+                path="/admin"
+                render={() => (
+                  <Admin
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/about"
+                render={() => (
+                  <About
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/contact"
+                render={() => (
+                  <Contact
+                  />
+                )}
+              />
+              {/* <Error /> */}
             </DataProvider>
-            <Route
-              exact
-              path="/admin"
-              render={() => (
-                <Admin
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/about"
-              render={() => (
-                <About
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/contact"
-              render={() => (
-                <Contact
-                />
-              )}
-            />
-            <Error />
           </Switch>
         </BrowserRouter>
       </>

@@ -3,6 +3,7 @@ import { GlobalState } from '../../../GlobalState';
 import './Cart.css';
 import axios from 'axios';
 import PaypalButton from './PaypalButton';
+import NavBar from '../../NavBar/NavBar';
 
 
 const Cart = () => {
@@ -73,10 +74,28 @@ const Cart = () => {
     }
 
     if (cart.length === 0)
-        return <h2 style={{ textAlign: 'center', fontSize: "5rem" }}>Cart Is Empty</h2>
+        return (
+            <>
+                <NavBar />
+                <div class="container-fluid mt-100">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="cart-card">
+                                <div class="cart-card-body empty-cart">
+                                    <div class="col-sm-12 empty-cart-cls text-center"> <img src="https://i.imgur.com/jjWQ0AQ.png" width="130" height="130" class="img-fluid mb-4 mr-3" />
+                                        <h3><strong>Your Cart is Empty</strong></h3>
+                                        <h4>Add something to make me happy :)</h4> <a href="/shop" class="btn btn-outline-secondary cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </>)
 
     return (
         <div>
+            <NavBar />
             {
                 cart.map(product => (
                     <div className="detail cart" key={product._id}>
