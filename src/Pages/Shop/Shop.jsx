@@ -1,22 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router } from 'react-router-dom';
-import { DataProvider } from '../../GlobalState';
 import Header from '../../Components/Headers/Headers';
 import MainPages from '../../Components/MainShopPages/Pages';
+import Products from "../../Components/MainShopPages/Products/Products";
 import NavBar from "../../Components/NavBar/NavBar";
+import './Shop.css';
 
 const Shop = () => {
     return (
         <div>
-            <DataProvider>
-                <Router>
-                    <NavBar />
-                    <div className="App">
-                        <Header />
-                        <MainPages />
-                    </div>
-                </Router>
-            </DataProvider>
+            <NavBar />
+            <div className="shop-container">
+                <Header className="sidebar" />
+                <MainPages />
+                <Products />
+            </div>
         </div>
     )
 }

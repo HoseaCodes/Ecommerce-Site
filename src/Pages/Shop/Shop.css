@@ -1,0 +1,8 @@
+.shop-container {
+    display: flex;
+    grid-template-columns: 30rem auto;
+}
+
+.sidebar {
+    width: 40%;
+}

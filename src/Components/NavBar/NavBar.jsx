@@ -65,7 +65,7 @@ const NavBar = (props) => {
                         </div>
                     </div>
                     <Wrapper>
-                        <Link to="/" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                         <Link to="/about" className="nav-item" >About</Link>
                         <Link to="/contact" className="nav-item">Contact</Link>
                         {isLoggedIn ? loggedInRouter() : <Link to="/login" className="nav-item">Login ✥ Register</Link>}

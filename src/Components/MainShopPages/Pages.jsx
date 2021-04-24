@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
 import Products from "./Products/Products";
 import DetailProduct from "./DetailProduct/DetailProduct";
 import Cart from "./Cart/Cart";
@@ -13,6 +13,8 @@ import NotFound from "./Utils/NotFound/NotFound";
 import { GlobalState } from '../../GlobalState';
 
 const Pages = () => {
+    const location = useLocation();
+    const currentRoute = location.pathname;
     const state = useContext(GlobalState);
     const [isLoggedIn] = state.userAPI.isLoggedIn
     const [isAdmin] = state.userAPI.isAdmin
