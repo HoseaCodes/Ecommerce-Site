@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { GlobalState } from '../../GlobalState';
 import Close from '../Headers/icon/close.svg';
 import axios from 'axios'
+import Newsletter from "../../Pages/Newsletter/Newsletter";
 
 const NavBar = (props) => {
     const [open, setOpen] = useState("false");
@@ -67,6 +68,9 @@ const NavBar = (props) => {
                     <Wrapper>
                         <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                         <Link to="/about" className="nav-item" >About</Link>
+                        {/* <Link className="nav-item"> */}
+                        <Newsletter />
+                        {/* </Link> */}
                         <Link to="/contact" className="nav-item">Contact</Link>
                         {isLoggedIn ? loggedInRouter() : <Link to="/login" className="nav-item">Login ✥ Register</Link>}
                         <li className="menu" onClick={() => setMenu(!menu)}>

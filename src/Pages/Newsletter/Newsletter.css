@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "NewYork";
+    src: url("../../Fonts/newyork/newyork.woff");
+    }
+
+@font-face {
+    font-family: "Oregon";
+    src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+    }
+    
+
+.modal-content {
+    border: none;
+    background: transparent;
+    padding: 0 19px
+}
+
+.close {
+    position: relative;
+    top: 48px;
+    left: 0;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    color: black
+}
+
+.modal-header {
+    border: none
+}
+
+.modal-header .close {
+    padding: 0rem 1rem !important;
+    margin: -1rem -1rem -1rem auto
+}
+
+.modal-body {
+    border: none;
+    background-color: white;
+    padding-bottom: 5px;
+    padding: 4%;
+}
+
+.close.focus,
+.close:focus {
+    outline: 0;
+    box-shadow: none !important
+}
+
+.form-control {
+    width: 80%;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0.5px 0px 0px #dae0e5 !important;
+    color: #63686c;
+    font-weight: bold;
+    font-size: 12px
+}
+
+.form-control.focus {
+    border: none;
+    border-color: #fff;
+    border-bottom: 1px solid #000;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, .25)
+}
+
+.para {
+    font-family: "Oregon";
+    font-size: 1.1rem !important;
+    letter-spacing: .05rem;
+    line-height: 1.5;
+}
+
+.details h2 {
+    font-family: "New York";
+    padding-bottom: 4%;
+}
+
+@media (min-width:599px) {
+    .modal-dialog {
+        max-width: 47rem
+    }
+
+    .details {
+        padding: 60px 0 40px 50px
+    }
+
+    .text-muted a {
+        color: #c0bfbf;
+        font-weight: bold;
+        text-decoration: underline
+    }
+
+    small.para {
+        font-weight: bold;
+        font-size: 14px;
+        color: #63686c
+    }
+}
