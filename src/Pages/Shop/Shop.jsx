@@ -6,12 +6,12 @@ import NavBar from "../../Components/NavBar/NavBar";
 import './Shop.css';
 
 const Shop = () => {
+
     return (
         <div>
             <NavBar />
             <div className="shop-container">
                 <Header className="sidebar" />
-                <MainPages />
                 <Products />
             </div>
         </div>

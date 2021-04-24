@@ -1,7 +1,7 @@
 header {
     width: auto;
     min-height: 70px;
-    /* width:100%; */
+    align-items: baseline;
     overflow: hidden;
     display: flex !important;
     flex-wrap: wrap;
