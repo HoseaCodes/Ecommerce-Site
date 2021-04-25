@@ -16,6 +16,10 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
+//Database
+require('./config/database');
+
+
 //Routes
 app.use('/user', require('./routes/user'));
 app.use('/api', require('./routes/category'));
@@ -23,17 +27,7 @@ app.use('/api', require('./routes/product'));
 app.use('/api', require('./routes/upload'));
 app.use('/api', require('./routes/payment'));
 
-// Connect to ongodb
-const URI = process.env.MONGODB_URL
-mongoose.connect(URI, {
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}, err => {
-    if (err) throw err;
-    console.log('Connected to MongoDB')
-})
+
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('build'))
