@@ -4,6 +4,7 @@ import { DataProvider } from './GlobalState';
 import './App.css';
 import Home from './Pages/Home/Home';
 import Admin from './Pages/Admin/Admin';
+import AddBlog from './Pages/Admin/AddBlog/AddBlog';
 import Contact from './Pages/Contact/Contact';
 import About from './Pages/About/About';
 import Shop from './Pages/Shop/Shop';
@@ -69,7 +70,7 @@ export default class App extends Component {
     // console.log(Global.Provider)
     return (
       <>
-        {this.state.loading ? <Loader /> : null}
+        {/* {this.state.loading ? <Loader /> : null} */}
         <BrowserRouter>
           <Switch>
             <DataProvider>
@@ -105,6 +106,14 @@ export default class App extends Component {
                 path="/admin"
                 render={() => (
                   <Admin
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/admin/addBlog"
+                render={() => (
+                  <AddBlog
                   />
                 )}
               />
