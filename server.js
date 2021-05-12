@@ -28,7 +28,6 @@ app.use('/api', require('./routes/upload'));
 app.use('/api', require('./routes/payment'));
 
 
-
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('build'))
     app.get('*', (req, res) => {
