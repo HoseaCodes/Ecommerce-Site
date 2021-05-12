@@ -54,7 +54,7 @@ const NavBar = (props) => {
             <nav>
                 <div className={`main-nav ${isActive ? "" : "main-nav open"}`}>
                     <Wrapper>
-                        <Link to="/blog" className="nav-item" onMouseOver={() => setOpen(!open)}>Blog</Link>
+                        <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
                         <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link>
                         <Link to="/coaching" className="nav-item" >Coaching Services</Link>
                     </Wrapper>
