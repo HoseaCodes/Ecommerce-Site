@@ -4,21 +4,15 @@ import BlogCard from './BlogCard';
 import { blogData } from './BlogData';
 import InfiniteScroll from "react-infinite-scroll-component";
 
-
-
 class Blog extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             search: "",
-            blogs: blogData,
+            blogs: blogData.slice(0,2),
             status: "active",
-            items: Array.from({ length: 2 }),
             groupItems: 2,
-            isLading: false,
-            isLoaded: false,
             articles: []
-
         }
     }
 
@@ -27,13 +21,15 @@ class Blog extends React.Component {
         // 20 more records in 1.5 secs
         setTimeout(() => {
             this.setState({
-                items: this.state.blogs.concat(Array.from({ length: 2 }))
+                blogs: this.state.blogs.concat( blogData.slice(0,this.state.groupItems+2)),
+                groupItems: this.state.groupItems += 2
             });
         }, 1500);
     };
 
 
     render() {
+
         const { blogs } = this.state;
 
         return (
@@ -43,20 +39,18 @@ class Blog extends React.Component {
                         <section ref="myscroll"
                             className='blogList'>
                             <InfiniteScroll
-                                dataLength={this.state.items.length}
+                                dataLength={this.state.blogs}
                                 next={this.fetchMoreData}
                                 hasMore={true}
                                 loader={<h4>Loading...</h4>}
-                            >
+                                scrollableTarget="scrollableDiv">
                                 {blogs.map((blog, idx) => (<>
                                     <BlogCard blog={blog}
-                                        key={blog.id}
-                                    />
+                                         key={blog.id}
+                                     /> 
                                 </>
                                 ))}
                             </InfiniteScroll>
-
-
                         </section>
                     </div>
                 </div>
