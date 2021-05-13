@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Blog.css'
 import BlogCard from './BlogCard';
 import { blogData } from './BlogData';
 import InfiniteScroll from "react-infinite-scroll-component";
+import axios from 'axios';
 
 class Blog extends React.Component {
     constructor(props) {
@@ -10,9 +11,22 @@ class Blog extends React.Component {
         this.state = {
             search: "",
             blogs: blogData.slice(0,2),
+            loading: true,
+            newBlogs: {},
             status: "active",
             groupItems: 2,
             articles: []
+        }
+    }
+
+    async reqBlogs(){
+        try{
+            const response = await axios.get('/api/getBlogs')
+            console.log(response);
+            this.setState({newBlogs: response.data.blogData, loading: true })
+            return
+        }catch(err){
+            console.log(err); return this.setState({ loading: false})
         }
     }
 
@@ -27,11 +41,16 @@ class Blog extends React.Component {
         }, 1500);
     };
 
+  componentDidMount() {
+    reqBlogs()
+  }
+
+  
 
     render() {
 
         const { blogs } = this.state;
-
+        if (!this.newBlogs) return (<div>No Blogs Yet...</div>)
         return (
             <div className='blog-container'>
                 <div id="blogs">

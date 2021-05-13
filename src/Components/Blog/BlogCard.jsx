@@ -14,7 +14,7 @@ class BlogCard extends Component {
 
 
     render() {
-        const { name, title, info, img, category, link } = this.props.blog;
+        const { name, title, info, img, category, link, _id } = this.props.blog;
         const Wrapper = styled.div`
         display: flex;
         flex-direction: row;
@@ -31,7 +31,9 @@ class BlogCard extends Component {
                     <img className='blog-img' width="450rem" src={img} alt={name} />
                     <Wrapper2>
                         <h5>{category}</h5>
-                        <h2 className='blog-card-header' >{name}</h2>
+                        <Link to={`/specificBlog/${_id}`}>
+                            <h2 className='blog-card-header' >{name}</h2>
+                        </Link>
                         <Link to={link} className='blog-card-share'
                         ><p>Share</p></Link>
                         <p className="work-content">{title}</p>
