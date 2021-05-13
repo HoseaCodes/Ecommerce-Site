@@ -19,16 +19,7 @@ class Blog extends React.Component {
         }
     }
 
-    async reqBlogs(){
-        try{
-            const response = await axios.get('/api/getBlogs')
-            console.log(response);
-            this.setState({newBlogs: response.data.blogData, loading: true })
-            return
-        }catch(err){
-            console.log(err); return this.setState({ loading: false})
-        }
-    }
+     
 
     fetchMoreData = () => {
         // a fake async api call like which sends
@@ -42,7 +33,17 @@ class Blog extends React.Component {
     };
 
   componentDidMount() {
-    reqBlogs()
+    this.reqBlogs = async () => {
+        try{
+            const response = await axios.get('/api/getBlogs')
+            console.log(response);
+            this.setState({newBlogs: response.data.blogData, loading: true })
+            return
+        }catch(err){
+            console.log(err); return this.setState({ loading: false})
+        }
+    }
+    this.reqBlogs()
   }
 
   
@@ -50,7 +51,7 @@ class Blog extends React.Component {
     render() {
 
         const { blogs } = this.state;
-        if (!this.newBlogs) return (<div>No Blogs Yet...</div>)
+        // if (!this.blogs) return (<div>No Blogs Yet...</div>)
         return (
             <div className='blog-container'>
                 <div id="blogs">

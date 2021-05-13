@@ -23,8 +23,7 @@ import OrderDetails from "./Components/MainShopPages/History/orderDetails";
 import Category from "./Components/MainShopPages/Categories/categories";
 import Create from "./Components/MainShopPages/CreateProduct/createProduct";
 import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
-// import { GlobalState } from './GlobalState';
-import { GlobalState } from "./GlobalState";
+import { GlobalState } from './GlobalState';
 
 
 const styles = {
@@ -56,13 +55,14 @@ export default class App extends Component {
     authenticated: false,
     loading: true,
     // isLoggedIn: global.userAPI.isLoggedIn,
-    // isAdmin: global.userAPI.isAdmin
-
+    // isAdmin: GlobalState.userAPI.isAdmin
+    global: GlobalState
   }
 
   componentDidMount() {
     // this simulates an async action, after which the component will render the content
     demoAsyncCall().then(() => this.setState({ loading: false }));
+    console.log(global)
   }
 
   // static contextType = GlobalState;
