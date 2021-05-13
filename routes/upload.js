@@ -11,9 +11,8 @@ cloudinary.config({
 })
 
 //image upload
-router.post("/upload", auth, authAdmin, (req, res) => {
+router.post("/upload", /* auth, authAdmin, */ (req, res) => {
     try {
-        console.log(req.files)
         if (!req.files || Object.keys(req.files).length === 0) return res.status(400).send({ msg: "No files were uploaded." })
 
         const file = req.files.file;
@@ -32,7 +31,7 @@ router.post("/upload", auth, authAdmin, (req, res) => {
 
             removeTmp(file.tempFilePath)
 
-            res.json({ result })
+            return res.json({ result })
         })
 
     } catch (err) {
