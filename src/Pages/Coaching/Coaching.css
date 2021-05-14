@@ -1,0 +1,15 @@
+#coaching-page .coaching-container {
+	padding-top: 9%;
+}
+
+@media screen and (max-width: 1200px) {
+	#coaching-page .coaching-container {
+		padding-top: 11%;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	#coaching-page .coaching-container {
+		padding-top: 7%;
+	}
+}
