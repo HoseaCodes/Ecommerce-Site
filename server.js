@@ -8,6 +8,9 @@ const cookieParser = require('cookie-parser');
 const path = require('path')
 
 const app = express();
+app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
@@ -26,8 +29,7 @@ app.use('/api', require('./routes/category'));
 app.use('/api', require('./routes/product'));
 app.use('/api', require('./routes/upload'));
 app.use('/api', require('./routes/payment'));
-
-
+app.use('/api', require('./routes/blog'))
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('build'))
@@ -35,10 +37,6 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.join(__dirname, 'build', 'index.html'))
     })
 }
-
-app.get('/', (req, res) => {
-    res.json({ msg: "Welcome" })
-})
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
