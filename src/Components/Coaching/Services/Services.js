@@ -22,12 +22,12 @@ const Services = (props) => {
 							<img src={coachingImg} className="card-img-top" alt="..." />
 							<div className="card-body justify-content-center">
 								<h5 className="card-title">Creative Consulting</h5>
-								<p className="card-text">
+								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
 								<p className="card-text">$$$</p>
-								<div className="justify-content-center">
-									<button className="btn btn-dark">Book Now</button>
+								<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>
 							</div>
 						</div>
@@ -37,12 +37,13 @@ const Services = (props) => {
 							<img src={coachingImg} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">Creative Consulting</h5>
-								<p className="card-text">
+								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
 								<p className="card-text">$$$</p>
-								<button className="btn btn-dark">Book Now</button>
-							</div>
+								<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
+								</div>							</div>
 						</div>
 					</li>
 					<li className="col-lg-4 col-md-6 col-sm-12">
@@ -50,12 +51,13 @@ const Services = (props) => {
 							<img src={coachingImg} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">Creative Consulting</h5>
-								<p className="card-text">
+								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
 								<p className="card-text">$$$</p>
-								<button className="btn btn-dark">Book Now</button>
-							</div>
+								<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
+								</div>							</div>
 						</div>
 					</li>
 					<li className="col-lg-4 col-md-6 col-sm-12">
@@ -63,12 +65,13 @@ const Services = (props) => {
 							<img src={coachingImg} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">Creative Consulting</h5>
-								<p className="card-text">
+								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
 								<p className="card-text">$$$</p>
-								<button className="btn btn-dark">Book Now</button>
-							</div>
+								<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
+								</div>							</div>
 						</div>
 					</li>
 					<li className="col-lg-4 col-md-6 col-sm-12">
@@ -76,12 +79,13 @@ const Services = (props) => {
 							<img src={coachingImg} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">Creative Consulting</h5>
-								<p className="card-text">
+								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
 								<p className="card-text">$$$</p>
-								<button className="btn btn-dark">Book Now</button>
-							</div>
+								<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
+								</div>							</div>
 						</div>
 					</li>
 					<li className="col-lg-4 col-md-6 col-sm-12">
@@ -89,12 +93,13 @@ const Services = (props) => {
 							<img src={coachingImg} className="card-img-top" alt="..." />
 							<div className="card-body">
 								<h5 className="card-title">Creative Consulting</h5>
-								<p className="card-text">
+								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
 								<p className="card-text">$$$</p>
-								<button className="btn btn-dark">Book Now</button>
-							</div>
+								<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
+								</div>							</div>
 						</div>
 					</li>
 				</>
@@ -109,13 +114,14 @@ const Services = (props) => {
 						/>
 						<div className="card-body">
 							<h5 className="card-title">Motivational Speaking</h5>
-							<p className="card-text">
+							<p className="card-text-content">
 								A good speech, could be just what you need for your event or
 								panel
 							</p>
 							<p className="card-text">$$$</p>
-							<button className="btn btn-dark">Book Now</button>
-						</div>
+							<div className="justify-content-center coaching-buy-btn-group">
+									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
+								</div>						</div>
 					</div>
 				</li>
 			)}
