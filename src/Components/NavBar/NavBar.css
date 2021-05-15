@@ -1,120 +1,120 @@
 :root {
-    --bg: white;
-    --bg-accent: gray;
-    --txt-color: black;
-    --nav-size: 0vh;
-    --border: 1px solid teal;
-    --border-radius: 8px;
-    --speed: 500ms;
+  --bg: white;
+  --bg-accent: gray;
+  --txt-color: black;
+  --nav-size: 0vh;
+  --border: 1px solid teal;
+  --border-radius: 8px;
+  --speed: 500ms;
 }
 @font-face {
-    font-family: "Oregon";
-    src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
-    }
-    
+  font-family: "Oregon";
+  src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+}
+
+.header-nav {
+  /* position: fixed;
+	top: 0; */
+  z-index: 9999;
+  width: 100%;
+}
+
 .main-nav {
-    font-weight: 700;
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--bg);
-    font-family: 'Oregon';
- }
-.nav-item{
-    text-decoration: none;
-    color: var(--txt-color);
-    opacity: .4;
-    font-size: 1rem;
-    text-transform: uppercase;
-    transition: filter 300ms;
-    padding: 15px;
+  font-weight: 700;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--bg);
+  font-family: "Oregon";
+}
+.nav-item {
+  text-decoration: none;
+  color: var(--txt-color);
+  opacity: 0.4;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: filter 300ms;
+  padding: 15px;
 }
 .active {
-        opacity: 1;
+  opacity: 1;
 }
 
 .nav-item:hover {
-    text-decoration: none;
-    color: purple;
+  text-decoration: none;
+  color: purple;
 }
 
-
 .nav-signin {
-    position: absolute;
-    right: 2%;
-    top: 2%;
+  position: absolute;
+  right: 2%;
+  top: 2%;
 }
 
 .dropdown {
-    overflow: visible !important;
+  overflow: visible !important;
 }
 
 .drop-nav {
-    opacity: .9;
+  opacity: 0.9;
 }
 
 .drop-nav a {
-    color: black;
+  color: black;
 }
 .drop-nav .nav-links {
-    padding: 0%;
+  padding: 0%;
 }
 /* --------------------------------------- */
- /* Mobile Responsive */
+/* Mobile Responsive */
 
- @media only screen and (max-device-width: 480px) {
-     .burger-nav {
-        width: 100%;
-        height: 8vh;
-        background-color: #1A1E23;
-     }
-     .burger-nav img {
-        cursor: pointer;
-     }
-     .nav-item {
-         text-align: left;
-         width: 100%;
-         margin: 0;
-         color: white;
-         opacity: 1 !important;
-         padding: 10px;
-         border-bottom: 1px solid #404040;
-         display: block !important;
-
-     }
-     .main-nav {
-         overflow: hidden;
-         display: block;
-         height: 0;
-     }
-     .main-nav.open {
-         height: auto;
-     }
- }
-
+@media only screen and (max-device-width: 480px) {
+  .burger-nav {
+    width: 100%;
+    height: 8vh;
+    background-color: #1a1e23;
+  }
+  .burger-nav img {
+    cursor: pointer;
+  }
+  .nav-item {
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    color: white;
+    opacity: 1 !important;
+    padding: 10px;
+    border-bottom: 1px solid #404040;
+    display: block !important;
+  }
+  .main-nav {
+    overflow: hidden;
+    display: block;
+    height: 0;
+  }
+  .main-nav.open {
+    height: auto;
+  }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .nav-img {
-        display: none;
-    }  
-}  
+  .nav-img {
+    display: none;
+  }
+}
 /* Large devices (laptops/desktops, 996px and up) */
 @media only screen and (min-width: 996px) {
-
-    .nav-img {
-        display: none;
-    }  
-  
+  .nav-img {
+    display: none;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-   
-    .nav-img {
-        display: none;
-    }  
+  .nav-img {
+    display: none;
+  }
 }
-   

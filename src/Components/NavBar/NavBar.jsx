@@ -1,37 +1,36 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import burger from '../../Images/burger.jpg';
-import logo1 from '../../Images/logo6.png';
-import Content from './ContentBar';
-import styled from 'styled-components';
-import { GlobalState } from '../../GlobalState';
-import Close from '../Headers/icon/close.svg';
-import axios from 'axios'
+import burger from "../../Images/burger.jpg";
+import logo1 from "../../Images/logo6.png";
+import Content from "./ContentBar";
+import styled from "styled-components";
+import { GlobalState } from "../../GlobalState";
+import Close from "../Headers/icon/close.svg";
+import axios from "axios";
 import Newsletter from "../../Pages/Newsletter/Newsletter";
 
 const NavBar = (props) => {
-    const [open, setOpen] = useState("false");
-    const [isActive, setActive] = useState("false");
-    const state = useContext(GlobalState)
-    const [isAdmin] = state.userAPI.isAdmin
-    const [menu, setMenu] = useState(false)
-    const [isLoggedIn] = state.userAPI.isLoggedIn
+	const [open, setOpen] = useState("false");
+	const [isActive, setActive] = useState("false");
+	const state = useContext(GlobalState);
+	const [isAdmin] = state.userAPI.isAdmin;
+	const [menu, setMenu] = useState(false);
+	const [isLoggedIn] = state.userAPI.isLoggedIn;
 
-    const handleToggle = () => {
-        setActive(!isActive);
-    };
-    const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-`;
-    const logoutUser = async () => {
-        await axios.get('/user/logout')
-        localStorage.removeItem('firstLogin')
-        window.location.href = "/"
-    }
-
+	const handleToggle = () => {
+		setActive(!isActive);
+	};
+	const Wrapper = styled.div`
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+	`;
+	const logoutUser = async () => {
+		await axios.get("/user/logout");
+		localStorage.removeItem("firstLogin");
+		window.location.href = "/";
+	};
 
     const loggedInRouter = () => {
         return (
@@ -40,7 +39,6 @@ const NavBar = (props) => {
             </>
         )
     }
-
 
     return (
         <div className="header-nav">
@@ -55,8 +53,10 @@ const NavBar = (props) => {
                 <div className={`main-nav ${isActive ? "" : "main-nav open"}`}>
                     <Wrapper>
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
-                        <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link>
+                        {/* <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link> */}
                         <Link to="/coaching" className="nav-item" >Coaching Services</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                     </Wrapper>
                     <div>
                         <div className="logo">
@@ -66,7 +66,6 @@ const NavBar = (props) => {
                         </div>
                     </div>
                     <Wrapper>
-                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                         <Link to="/about" className="nav-item" >About</Link>
                         {/* <Link className="nav-item"> */}
                         <Newsletter />
@@ -85,6 +84,5 @@ const NavBar = (props) => {
 
     )
 }
-
 
 export default NavBar;
