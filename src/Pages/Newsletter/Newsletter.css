@@ -78,6 +78,11 @@
   padding-bottom: 4%;
 }
 
+.modal-content {
+  background: none !important;
+  border: none !important;
+}
+
 @media (min-width: 599px) {
   .modal-dialog {
     max-width: 47rem;
