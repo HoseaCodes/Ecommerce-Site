@@ -1,51 +1,80 @@
+@font-face {
+  font-family: "Oregon";
+  src: url("../../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+}
+
 #services {
-	list-style: none;
-	margin-left: 19%;
-	width: 80%;
-	padding-inline-start: 0;
+  list-style: none;
+  margin-left: 19%;
+  width: 80%;
+  padding-inline-start: 0;
 }
 
 #services li {
-	width: 90%;
-	margin-top: 5%;
+  width: 90%;
+  margin-top: 5%;
 }
 
 #services .card {
-	height: 400px;
-	border: none;
-	background-color: initial;
-	box-shadow: initial;
-	padding-top: 0;
+  height: 400px;
+  border: none;
+  background-color: initial;
+  box-shadow: initial;
+  padding-top: 0;
 }
 
 #services .card-img-top {
-	padding: 1.25rem;
-	padding-bottom: 0;
+  padding: 1.25rem;
+  padding-bottom: 0;
 }
 
 #services button {
-	width: 100%;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.card-text-content {
+  font-size: 1.3rem;
+  font-family: "Oregon";
+  text-transform: uppercase;
+  padding-top: 4%;
+}
+
+.coaching-buy-btn {
+  text-align: left;
+  padding-left: 14%;
+  width: 1rem;
+  background: #000;
+  color: #fff;
+}
+
+.coaching-buy-btn-group {
+  width: 60%;
 }
 
 @media screen and (max-width: 992px) {
-	#services {
-		margin-left: 0;
-		width: 100%;
-	}
-	#services button {
-		width: 50%;
-	}
+  #services {
+    margin-left: 0;
+    width: 100%;
+  }
+  #services button {
+    width: 50%;
+  }
 
-	#services li {
-		margin-top: 10%;
-	}
+  #services li {
+    margin-top: 10%;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	#services li {
-		margin-top: 25%;
-	}
-	#services li:first-child {
-		margin-top: 25%;
-	}
+  #services li {
+    margin-top: 25%;
+  }
+  #services li:first-child {
+    margin-top: 25%;
+  }
 }

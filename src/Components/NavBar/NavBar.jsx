@@ -49,7 +49,7 @@ const NavBar = (props) => {
             </div>
             <Content />
 
-            <nav>
+            <nav fixed="top">
                 <div className={`main-nav ${isActive ? "" : "main-nav open"}`}>
                     <Wrapper>
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
