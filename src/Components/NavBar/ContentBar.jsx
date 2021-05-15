@@ -7,7 +7,7 @@ const ContentBar = () => {
     return (
         <div className="content">
             <h6 ><i className="fas fa-truck-moving"></i>
-                  Free Shipping on all orders</h6>
+                &nbsp;  Free Shipping on all orders</h6>
 
         </div>
 

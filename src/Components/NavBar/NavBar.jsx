@@ -53,8 +53,10 @@ const NavBar = (props) => {
                 <div className={`main-nav ${isActive ? "" : "main-nav open"}`}>
                     <Wrapper>
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
-                        <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link>
+                        {/* <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link> */}
                         <Link to="/coaching" className="nav-item" >Coaching Services</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                     </Wrapper>
                     <div>
                         <div className="logo">
@@ -64,7 +66,6 @@ const NavBar = (props) => {
                         </div>
                     </div>
                     <Wrapper>
-                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                         <Link to="/about" className="nav-item" >About</Link>
                         {/* <Link className="nav-item"> */}
                         <Newsletter />

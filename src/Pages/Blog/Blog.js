@@ -11,6 +11,7 @@ class BlogPage extends Component {
         return (
             <div className="app">
                 <NavBar />
+                <h3 className="category-title">CATEGORY: &nbsp;BLOG</h3>
                 <Blog />
             </div>
         )

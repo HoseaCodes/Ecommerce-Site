@@ -1,27 +1,54 @@
 @font-face {
-    font-family: "NewYork";
-    src: url("../../Fonts/newyork/newyork.woff");
-    }
+  font-family: "NewYork";
+  src: url("../../Fonts/newyork/newyork.woff");
+}
 
-    .blog-card-header {
-        font-family: 'NewYork';
-        font-size: 2rem;
-    }
+@font-face {
+  font-family: "Oregon";
+  src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+}
 
-    .blog-card {
-        padding: 2%;
-        border-bottom: 1px solid gray;
-        border-right: 1px solid gray;
-    }
+.blog-card-header {
+  font-family: "NewYork";
+  font-size: 2rem;
+  padding-top: 10%;
+}
 
-    .blog-container {
-        display: grid;
-        grid-template-columns: 65% 35%;
-        margin-top: 15%;
-        border-top: 1px solid black;
+.blog-card {
+  padding: 2%;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+}
 
-    }
+.blog-container {
+  display: grid;
+  grid-template-columns: 65% 35%;
+  margin-top: 8%;
+  border-top: 1px solid black;
+}
 
-    .blog-content {
-        padding: 4% 0 4% 15%;
-    }
+.blog-content {
+  padding: 4% 0 4% 15%;
+}
+
+.category-title {
+  font-family: "NewYork";
+  font-size: 1.3rem;
+  text-align: center;
+  padding-top: 6%;
+  letter-spacing: 0.2rem;
+}
+
+.sc-gkdzZj a,
+.blog-card-wrapper a {
+  color: #000 !important;
+  padding-top: 4% !important;
+}
+
+.blog-card-wrapper span {
+  color: gray !important;
+}
+
+.blog-card-wrapper p {
+  padding-top: 10%;
+}
