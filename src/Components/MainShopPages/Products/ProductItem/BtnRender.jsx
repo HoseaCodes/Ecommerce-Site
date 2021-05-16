@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+
 import { Link } from 'react-router-dom';
+
 import { GlobalState } from '../../../../GlobalState';
 
 function BtnRender({ product, deleteProduct }) {

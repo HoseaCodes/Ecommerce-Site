@@ -1,10 +1,12 @@
 import React, { useState, useContext } from "react";
-import { GlobalState } from "../../GlobalState";
-import Menu from "./icon/menu.svg";
-import Close from "./icon/close.svg";
-import Cart from "./icon/cart.svg";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+import Cart from "./icon/cart.svg";
+import Close from "./icon/close.svg";
+import Menu from "./icon/menu.svg";
+import { GlobalState } from "../../GlobalState";
 
 //Handle sub nav w/Admin
 const Header = () => {

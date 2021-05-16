@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './Blog.css'
+
+import axios from 'axios';
+import InfiniteScroll from "react-infinite-scroll-component";
+
 import BlogCard from './BlogCard';
 import { blogData } from './BlogData';
-import InfiniteScroll from "react-infinite-scroll-component";
-import axios from 'axios';
+import './Blog.css'
 
 class Blog extends React.Component {
     constructor(props) {
@@ -61,7 +63,7 @@ class Blog extends React.Component {
                             <InfiniteScroll
                                 dataLength={this.state.blogs}
                                 next={this.fetchMoreData}
-                                hasMore={true}
+                                hasMore
                                 loader={<h4>Loading...</h4>}
                                 scrollableTarget="scrollableDiv">
                                 {blogs.map((blog, idx) => (<>

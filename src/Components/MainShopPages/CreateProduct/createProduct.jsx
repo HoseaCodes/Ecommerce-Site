@@ -1,8 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { GlobalState } from '../../../GlobalState';
-import Loading from '../Utils/Loading';
-import { useHistory, useParams } from 'react-router-dom';
+
 import axios from 'axios';
+import { useHistory, useParams } from 'react-router-dom';
+
+import Loading from '../Utils/Loading';
+import { GlobalState } from '../../../GlobalState';
 
 const initialState = {
     product_id: '',

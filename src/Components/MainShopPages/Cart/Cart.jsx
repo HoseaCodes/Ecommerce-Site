@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { GlobalState } from '../../../GlobalState';
-import './Cart.css';
+
 import axios from 'axios';
+
 import PaypalButton from './PaypalButton';
 import NavBar from '../../NavBar/NavBar';
+import { GlobalState } from '../../../GlobalState';
+import './Cart.css';
 
 
 const Cart = () => {

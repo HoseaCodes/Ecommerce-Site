@@ -1,14 +1,24 @@
 import React, { useState, useContext } from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Menu from "../../Components/Headers/icon/menu.svg";
 import logo1 from "../../Images/logo6.png";
 import Content from "./ContentBar";
-import styled from "styled-components";
-import { GlobalState } from "../../GlobalState";
-import Close from "../Headers/icon/close.svg";
+=======
+
 import axios from "axios";
+>>>>>>> e34c5573068672bfc79f4d4e3de621a11d28e1c2
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+import Burger from "../../Images/burger.jpg";
+import Close from "../Headers/icon/close.svg";
+import Content from "./ContentBar";
+import Logo from "../../Images/logo6.png";
 import Newsletter from "../../Pages/Newsletter/Newsletter";
+import { GlobalState } from "../../GlobalState";
+import "./NavBar.css";
 
 const NavBar = (props) => {
 	const [open, setOpen] = useState("false");
@@ -47,7 +57,7 @@ const NavBar = (props) => {
                     <div>
                         <div className="logo">
                             <h1>
-                                <Link to="/">{isAdmin ? 'Admin' : <img src={logo1} alt="Politically Savvy Logo" width='300px' />}</Link>
+                                <Link to="/">{isAdmin ? 'Admin' : <img src={Logo} alt="Politically Savvy Logo" width='300px' />}</Link>
                             </h1>
                         </div>
                     </div>

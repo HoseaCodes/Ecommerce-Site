@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { GlobalState } from '../../../GlobalState';
-import ProductItem from './ProductItem/Productitem';
-import Loading from '../Utils/Loading'
+
 import axios from 'axios'
 import LoadMore from './loadMore'
 import Masonry from 'react-masonry-css'
+import Loading from '../Utils/Loading';
+import ProductItem from './ProductItem/Productitem';
+import { GlobalState } from '../../../GlobalState';
 
 const Products = () => {
 

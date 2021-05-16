@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { GlobalState } from '../../../GlobalState';
+
 import axios from 'axios';
+
+import { GlobalState } from '../../../GlobalState';
 
 function OrderHistory() {
     const state = useContext(GlobalState)

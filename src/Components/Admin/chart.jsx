@@ -1,6 +1,8 @@
 import React from 'react'
-import '../../../node_modules/react-vis/dist/style.css';
+
 import { XAxis, XYPlot, LineSeries, YAxis, VerticalGridLines, HorizontalGridLines } from 'react-vis'
+
+import '../../../node_modules/react-vis/dist/style.css';
 
 
 // Display information of relavent sales data

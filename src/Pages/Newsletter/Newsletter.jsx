@@ -1,7 +1,9 @@
 import React from "react";
-import './Newsletter.css';
+
 import { Modal } from 'react-bootstrap';
+
 import Promo from '../../Images/promo.png';
+import './Newsletter.css';
 
 const Newsletter = () => {
     const [modalShow, setModalShow] = React.useState(false);
