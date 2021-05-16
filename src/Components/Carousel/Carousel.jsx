@@ -1,9 +1,11 @@
 import React from 'react';
+
+import styled from 'styled-components';
+import { Carousel } from 'react-bootstrap';
+
 import Carousel1 from '../../Images/carousel.png'
 import Carousel2 from '../../Images/Carousel2.png'
 import Carousel3 from '../../Images/Carousel3.png'
-import { Carousel } from 'react-bootstrap';
-import styled from 'styled-components';
 import './Carousel.css'
 
 const Wrapper = styled.div`

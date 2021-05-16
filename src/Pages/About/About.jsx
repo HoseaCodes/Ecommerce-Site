@@ -1,9 +1,10 @@
 import React from 'react';
-import './About.css';
+
 import about from '../../Images/about.png'
 import aboutQuote from '../../Images/about-quote.png'
-import NavBar from '../../Components/NavBar/NavBar';
 import Footer from '../../Components/Footer/Footer';
+import NavBar from '../../Components/NavBar/NavBar';
+import './About.css';
 
 const About = () => {
     return (
@@ -18,8 +19,7 @@ const About = () => {
                         <p>For years, I have served as a useful source to those seeking creative inspiration, innovate help, and personal growth advice. I finally decided to own that role and be intentional about it.
                         I started writing about my experiences, thoughts, and curious wonders of the world; while creatively incorporating my educational background.  With a BA in political science and journalism, I've become a expert in behavioral science.
                         I founded PoliticallySavvy.org with a mission to give others a taste of what goes on in my mind, and offer my services to those seeking professional and personal assistance.
-                        Take some time to explore the blog, read something interesting, and feel free to reach out if you would like to collaborate on a project together.
-</p>
+                        Take some time to explore the blog, read something interesting, and feel free to reach out if you would like to collaborate on a project together.</p>
                         <p className="about-signoff">Peace & Love, <br /> <span> Altremese Banks</span> </p>
                     </div>
                 </div>

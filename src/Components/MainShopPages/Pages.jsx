@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
+
 import { Switch, Route, useLocation } from 'react-router-dom';
-import Products from "./Products/Products";
-import DetailProduct from "./DetailProduct/DetailProduct";
+
 import Cart from "./Cart/Cart";
-import Login from "./Auth/Login";
-import Register from "./Auth/Register";
-import OrderHistory from "./History/orderHistory";
-import OrderDetails from "./History/orderDetails";
 import Category from "./Categories/categories";
 import Create from "./CreateProduct/createProduct";
+import DetailProduct from "./DetailProduct/DetailProduct";
+import Login from "./Auth/Login";
 import NotFound from "./Utils/NotFound/NotFound";
+import OrderDetails from "./History/orderDetails";
+import OrderHistory from "./History/orderHistory";
+import Products from "./Products/Products";
+import Register from "./Auth/Register";
 import { GlobalState } from '../../GlobalState';
 
 const Pages = () => {

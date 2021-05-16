@@ -1,6 +1,8 @@
 import React from 'react'
-import './sidebar.css';
+
 import Avatar from '../../Images/anime.jpg'
+
+import './sidebar.css';
 
 //Dashboard Sidebar nav
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {

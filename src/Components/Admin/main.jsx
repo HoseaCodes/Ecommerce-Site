@@ -1,8 +1,10 @@
-import React from 'react'
-import '../../../node_modules/react-vis/dist/style.css';
-import './main.css';
+import React from 'react';
+
 import Avatar from '../../Images/anime.jpg'
 import Chart from './chart';
+
+import './main.css';
+import '../../../node_modules/react-vis/dist/style.css';
 
 
 //Dashboard View

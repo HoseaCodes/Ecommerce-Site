@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './AddBlog.css'
+
+import axios from 'axios';
+
 import NavBar from '../../../Components/NavBar/NavBar';
-import axios from 'axios'
+import './AddBlog.css';
 
 const AddBlog = ()=>{
 	/* controlling inputs */

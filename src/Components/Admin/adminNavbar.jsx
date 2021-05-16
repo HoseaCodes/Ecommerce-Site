@@ -1,6 +1,7 @@
 import React from 'react'
-import './adminNavbar.css';
+
 import Avatar from '../../Images/anime.jpg'
+import './adminNavbar.css';
 
 const AdminNavbar = ({ sidebarOpen, openSidebar }) => {
     return (

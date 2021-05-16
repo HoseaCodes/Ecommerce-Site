@@ -1,14 +1,16 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import "./NavBar.css";
-import burger from "../../Images/burger.jpg";
-import logo1 from "../../Images/logo6.png";
-import Content from "./ContentBar";
-import styled from "styled-components";
-import { GlobalState } from "../../GlobalState";
-import Close from "../Headers/icon/close.svg";
+
 import axios from "axios";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+import Burger from "../../Images/burger.jpg";
+import Close from "../Headers/icon/close.svg";
+import Content from "./ContentBar";
+import Logo from "../../Images/logo6.png";
 import Newsletter from "../../Pages/Newsletter/Newsletter";
+import { GlobalState } from "../../GlobalState";
+import "./NavBar.css";
 
 const NavBar = (props) => {
 	const [open, setOpen] = useState("false");
@@ -43,7 +45,7 @@ const NavBar = (props) => {
     return (
         <div className="header-nav">
             <div className='burger-nav'>
-                <img className='nav-img' src={burger} alt="menu" width='50px' height='50px'
+                <img className='nav-img' src={Burger} alt="menu" width='50px' height='50px'
                     onClick={handleToggle}
                 />
             </div>
@@ -61,7 +63,7 @@ const NavBar = (props) => {
                     <div>
                         <div className="logo">
                             <h1>
-                                <Link to="/">{isAdmin ? 'Admin' : <img src={logo1} alt="Politically Savvy Logo" width='300px' />}</Link>
+                                <Link to="/">{isAdmin ? 'Admin' : <img src={Logo} alt="Politically Savvy Logo" width='300px' />}</Link>
                             </h1>
                         </div>
                     </div>

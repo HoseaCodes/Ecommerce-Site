@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
+
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { DataProvider } from './GlobalState';
-import './App.css';
-import Home from './Pages/Home/Home';
-import Coaching from './Pages/Coaching/Coaching'
-import BlogPage from './Pages/Blog/Blog';
-import SpecificBlogPage from './Pages/Blog/SpecificBlog';
-import Admin from './Pages/Admin/Admin';
-import AddBlog from './Pages/Admin/AddBlog/AddBlog';
-import Contact from './Pages/Contact/Contact';
+
 import About from './Pages/About/About';
-import Shop from './Pages/Shop/Shop';
-import Splash from './Pages/Splash/Slpash';
+import AddBlog from './Pages/Admin/AddBlog/AddBlog';
+import Admin from './Pages/Admin/Admin';
+import BlogPage from './Pages/Blog/Blog';
+import Cart from "./Components/MainShopPages/Cart/Cart";
+import Category from "./Components/MainShopPages/Categories/categories";
+import Coaching from './Pages/Coaching/Coaching'
+import Contact from './Pages/Contact/Contact';
+import Create from "./Components/MainShopPages/CreateProduct/createProduct";
+import DetailProduct from "./Components/MainShopPages/DetailProduct/DetailProduct";
 import Error from './Pages/Error/Error';
+import Home from './Pages/Home/Home';
+import Login from "./Components/MainShopPages/Auth/Login";
+import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
+import OrderDetails from "./Components/MainShopPages/History/orderDetails";
+import OrderHistory from "./Components/MainShopPages/History/orderHistory";
 import Particles from "./Components/Particles/Particles";
 import Products from "./Components/MainShopPages/Products/Products";
-import DetailProduct from "./Components/MainShopPages/DetailProduct/DetailProduct";
-import Cart from "./Components/MainShopPages/Cart/Cart";
-import Login from "./Components/MainShopPages/Auth/Login";
 import Register from "./Components/MainShopPages/Auth/Register";
-import OrderHistory from "./Components/MainShopPages/History/orderHistory";
-import OrderDetails from "./Components/MainShopPages/History/orderDetails";
-import Category from "./Components/MainShopPages/Categories/categories";
-import Create from "./Components/MainShopPages/CreateProduct/createProduct";
-import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
+import Shop from './Pages/Shop/Shop';
+import SpecificBlogPage from './Pages/Blog/SpecificBlog';
+import Splash from './Pages/Splash/Slpash';
+import { DataProvider } from './GlobalState';
 import { GlobalState } from './GlobalState';
+import './App.css';
 
 const styles = {
 	root: {

@@ -1,9 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
+
 import { useParams, Link } from 'react-router-dom';
-import { GlobalState } from '../../../GlobalState';
-import NavBar from '../../NavBar/NavBar';
+
 import Header from '../../Headers/Headers';
+import NavBar from '../../NavBar/NavBar';
 import ProductItem from '../Products/ProductItem/Productitem';
+import { GlobalState } from '../../../GlobalState';
 
 const DetailProduct = () => {
     const params = useParams()
@@ -21,7 +23,7 @@ const DetailProduct = () => {
     }, [params.id, products])
 
     if (detailProduct.length === 0) return null;
-
+    const { images, title, price, description, content, sold, category, product_id } = detailProduct;
     return (
         <>
             <NavBar />
@@ -29,16 +31,16 @@ const DetailProduct = () => {
                 <Header className="sidebar" />
                 <div>
                     <div className="detail">
-                        <img src={detailProduct.images.url} alt="Product Detail" />
+                        <img src={images.url} alt="Product Detail" />
                         <div className="box-detail">
                             <div className="row">
-                                <h2>{detailProduct.title}</h2>
-                                <h6>#id: {detailProduct.product_id}</h6>
+                                <h2>{title}</h2>
+                                <h6>#id: {product_id}</h6>
                             </div>
-                            <span>$ {detailProduct.price}</span>
-                            <p>{detailProduct.description}</p>
-                            <p>{detailProduct.content}</p>
-                            <p>Sold: {detailProduct.sold}</p>
+                            <span>$ {price}</span>
+                            <p>{description}</p>
+                            <p>{content}</p>
+                            <p>Sold: {sold}</p>
                             <Link to="/cart" className="cart"
                                 onClick={() => addCart(detailProduct)}>
                                 Buy Now
@@ -50,7 +52,7 @@ const DetailProduct = () => {
                         <div className="products">
                             {
                                 products.map(product => {
-                                    return product.category === detailProduct.category
+                                    return product.category === category
                                         ? <ProductItem key={product._id} product={product} /> : null
                                 })
                             }

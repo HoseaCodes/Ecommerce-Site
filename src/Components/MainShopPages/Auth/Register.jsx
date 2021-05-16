@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 import Footer from "../../../Components/Footer/Footer";
-import logo1 from "../../../Images/logo1.png";
+import Logo from "../../../Images/logo1.png";
 
 import "./Login.css";
 
@@ -31,11 +33,12 @@ const Register = () => {
 		}
 	};
 
+	const {name, email, password} = user
 	return (
 		<div id="login-page-container">
 			<div className="login-page">
 				<Link to="/">
-					<img className="brand" src={logo1} alt="brand-name" />
+					<img className="brand" src={Logo} alt="brand-name" />
 				</Link>
 				<form onSubmit={registerSubmit}>
 					<h2>Registration</h2>
@@ -46,7 +49,7 @@ const Register = () => {
 						required
 						id="name"
 						placeholder="Your name here"
-						value={user.name}
+						value={name}
 						onChange={onChangeInput}
 					/>
 					<label htmlFor="e-mail">E-mail</label>
@@ -56,7 +59,7 @@ const Register = () => {
 						id="e-mail"
 						required
 						placeholder="Your e-mail address"
-						value={user.email}
+						value={email}
 						onChange={onChangeInput}
 					/>
 					<label htmlFor="password">Password</label>
@@ -67,7 +70,7 @@ const Register = () => {
 						required
 						autoComplete="on"
 						placeholder="Enter your password"
-						value={user.password}
+						value={password}
 						onChange={onChangeInput}
 					/>
 

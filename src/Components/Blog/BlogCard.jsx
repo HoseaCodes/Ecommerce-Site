@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './Blog.css'
+
 import styled from 'styled-components';
+
+import './Blog.css'
 
 
 class BlogCard extends Component {

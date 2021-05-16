@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from 'react';
-import { GlobalState } from '../../../GlobalState';
-import { Link } from 'react-router-dom';
+
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+import { GlobalState } from '../../../GlobalState';
 
 function OrderHistory() {
     const state = useContext(GlobalState)

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./Login.css";
-import Footer from "../../../Components/Footer/Footer";
-import logo1 from "../../../Images/logo1.png";
+
 import axios from "axios";
+import { Link } from "react-router-dom";
+
+import Footer from "../../../Components/Footer/Footer";
+import Logo from "../../../Images/logo1.png";
+import "./Login.css";
 
 const Login = () => {
 	const [user, setUser] = useState({
@@ -31,7 +33,7 @@ const Login = () => {
 		<div id="login-page-container">
 			<div className="login-page">
 				<Link to="/">
-					<img className="brand" src={logo1} alt="brand-name" />
+					<img className="brand" src={Logo} alt="brand-name" />
 				</Link>
 				<form onSubmit={loginSubmit}>
 					<h2>Sign in to your account</h2>

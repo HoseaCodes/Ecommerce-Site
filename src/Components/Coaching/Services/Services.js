@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+
 import coachingImg from "./coaching.png";
 import { GlobalState } from "../../../GlobalState";
 import "./Services.css";

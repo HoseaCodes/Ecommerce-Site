@@ -1,7 +1,8 @@
 import React from 'react';
-import './Home.css'
-import NavBar from '../../Components/NavBar/NavBar';
+
 import DropDownMenu from '../../Components/DropDownMenu/DropDownMenu';
+import NavBar from '../../Components/NavBar/NavBar';
+import './Home.css'
 
 class Home extends React.Component {
     render() {

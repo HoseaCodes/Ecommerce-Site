@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { GlobalState } from '../../../GlobalState';
+
 import Loading from '../Utils/Loading'
+import { GlobalState } from '../../../GlobalState';
 
 // Load additional Products for pagination
 const LoadMore = () => {
