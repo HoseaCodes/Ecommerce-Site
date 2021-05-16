@@ -1,8 +1,13 @@
+.wrapper{
+    margin-top: 120px;
+}
 .shop-container {
     display: flex;
     grid-template-columns: 30rem auto;
+    width: 100%;
 }
 
 .sidebar {
-    width: 40%;
+    width: 100%;
+    margin: 0;
 }

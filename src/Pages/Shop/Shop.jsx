@@ -8,7 +8,7 @@ import './Shop.css';
 const Shop = () => {
 
     return (
-        <div>
+        <div className="wrapper">
             <NavBar />
             <div className="shop-container">
                 <Header className="sidebar" />

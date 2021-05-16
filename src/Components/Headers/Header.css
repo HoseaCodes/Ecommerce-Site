@@ -4,10 +4,12 @@ header {
     align-items: baseline;
     overflow: hidden;
     display: flex !important;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    min-width: 300px;
+    padding: 20px 20px 20px 0px;
 }
 
 header .logo {
@@ -36,6 +38,7 @@ header ul li:hover {
 .cart-icon {
     position: relative;
     margin-right: 10px;
+    margin-top: 20px;
 }
 .cart-icon span {
     background: crimson;
@@ -46,8 +49,12 @@ header ul li:hover {
     right: -10px;
     padding: 5px 7px;
     font-size: 10px;
+    z-index: 1;
 }
-
+.cart-icon a{
+    position: absolute;
+    right: 0;
+}
 #search {
     outline: none;
     border: none;
@@ -58,125 +65,66 @@ header ul li:hover {
     color: rgb(153, 40, 59)
 }
 
-#orange,
-select,
-.btn {
-    color: orange
-}
-
 .form-group {
     display: flex;
     align-items: center;
-    margin-bottom: 5px
+    margin-bottom: 5px !important;
 }
-
+input:checked~label{
+    color:rgb(153, 40, 59) !important;
+    font-weight: 500 !important;
+    text-decoration: underline !important;
+}
+.form-group input{
+    display: none;
+}
 label {
-    padding-left: 10px
+    padding-left: 10px;
+    cursor:pointer;
+    margin: 0 !important;
 }
 
 .form-group:last-child {
     margin-bottom: 0
 }
 
-
-@media(min-width:1200px) {
-    .text {
-        display: none
-    }
-
-    .fa-user-o,
-    .fa-shopping-cart {
-        font-size: 20px;
-        padding-left: 20px
-    }
-
-    #sidebar {
-        padding: 20px;
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
+/* for the responsive layout of the sidebar*/
+.hamburger2{
+	display: none;
+	z-index: 10000;
+	background-color: transparent;
+	color: white;
+	border:none;
+	cursor: pointer;
+	position: fixed;
+	top: 70px;
+	left: 15px;
+}
+.hamburger2:hover{
+	color: #40BFF8;
+}
+.checker {
+    display: none;
 }
 
-@media(min-width:992px) and (max-width:1199px) {
-
-    .text {
-        display: none
+@media only screen and (max-width: 1200px) {
+    header{
+        position: fixed;
+        top: 124px;
+        overflow: auto;
+        z-index: 2;
+        background-color: rgb(255, 255, 255);
+        -webkit-box-shadow: 5px 12px 10px 0px rgba(0,0,0,0.22); 
+        box-shadow: 5px 12px 12px 0px rgba(0,0,0,0.22);
+        height: 100%;
     }
-
-    #sidebar {
-        width: 30%;
-        padding: 20px;
-        float: left
+	.hamburger2{
+		display: block;
+	}
+    .checker:not(:checked) ~ header {
+        transform: translateX(-350px);
     }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:768px) and (max-width:991px) {
-    .text {
-        display: none
-    }
-
-    #sidebar {
-        width: 35%;
-        padding: 20px;
-        float: left
-    }
-
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(min-width:576px) and (max-width:767px) {
-    .text {
-        display: none
-    }
-
-    #sidebar {
-        width: 40%;
-        padding: 20px;
-        float: left
-    }
-
-
-    #off {
-        padding-left: 2px
-    }
-
-    #sorting span,
-    #res {
-        font-size: 14px
-    }
-
-    .filter,
-    #mobile-filter {
-        display: none
-    }
-}
-
-@media(max-width:575px) {
- 
-    #sidebar {
-        display: none
-    }
-
-    .filter {
-        margin-left: 70%;
-        margin-top: 2%
-    }
-
-    #sorting,
-    #res {
-        font-size: 12px;
-        margin-top: 2%
+    .checker:checked ~ header{
+        transform: translateX(0px);
     }
 }
