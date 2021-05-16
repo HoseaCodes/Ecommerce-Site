@@ -1,14 +1,6 @@
 import React, { useState, useContext } from "react";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-import "./NavBar.css";
-import Menu from "../../Components/Headers/icon/menu.svg";
-import logo1 from "../../Images/logo6.png";
-import Content from "./ContentBar";
-=======
 
 import axios from "axios";
->>>>>>> e34c5573068672bfc79f4d4e3de621a11d28e1c2
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -45,7 +37,7 @@ const NavBar = (props) => {
         <div className="header-nav">
             <Content />
 
-            <nav fixed="top">
+            <nav >
                 <div className={`main-nav`}>
                     <div classname="wrapper">
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
@@ -76,11 +68,11 @@ const NavBar = (props) => {
                 <div className="dropdown-nav">
                     <div className="logo">
                         <h1>
-                            <Link to="/">{isAdmin ? 'Admin' : <img src={logo1} alt="Politically Savvy Logo" width='300px' />}</Link>
+                            <Link to="/">{isAdmin ? 'Admin' : <img src={Logo} alt="Politically Savvy Logo"/>}</Link>
                         </h1>
                     </div>
                     <label htmlFor="bar-checker2" className='hamburger3'>
-                        <img src={Menu} alt="Menu" width="30" />
+                        <img src={Burger} alt="Menu" width="30" />
                     </label>
                     <input type="checkbox" className='checker' id="bar-checker2"/>
                     <div className="dropdown-sidebar">
