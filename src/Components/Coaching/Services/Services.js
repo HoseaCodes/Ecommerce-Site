@@ -26,7 +26,7 @@ const Services = (props) => {
 								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
-								<p className="card-text">$$$</p>
+								<p className="card-text">$1.49</p>
 								<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>
@@ -41,7 +41,7 @@ const Services = (props) => {
 								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
-								<p className="card-text">$$$</p>
+								<p className="card-text">$1.49</p>
 								<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>							</div>
@@ -55,7 +55,7 @@ const Services = (props) => {
 								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
-								<p className="card-text">$$$</p>
+								<p className="card-text">$1.49</p>
 								<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>							</div>
@@ -69,7 +69,7 @@ const Services = (props) => {
 								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
-								<p className="card-text">$$$</p>
+								<p className="card-text">$1.49</p>
 								<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>							</div>
@@ -83,7 +83,7 @@ const Services = (props) => {
 								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
-								<p className="card-text">$$$</p>
+								<p className="card-text">$1.49</p>
 								<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>							</div>
@@ -97,7 +97,7 @@ const Services = (props) => {
 								<p className="card-text-content">
 									In need of fresh ideas for your company?
 								</p>
-								<p className="card-text">$$$</p>
+								<p className="card-text">$1.49</p>
 								<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>							</div>
@@ -119,7 +119,7 @@ const Services = (props) => {
 								A good speech, could be just what you need for your event or
 								panel
 							</p>
-							<p className="card-text">$$$</p>
+							<p className="card-text">$1.49</p>
 							<div className="justify-content-center coaching-buy-btn-group">
 									<button className="coaching-buy-btn">Add To Bag <span> &nbsp;→</span></button>
 								</div>						</div>
