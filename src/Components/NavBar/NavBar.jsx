@@ -1,6 +1,14 @@
 import React, { useState, useContext } from "react";
+<<<<<<< HEAD
+import { Link } from "react-router-dom";
+import "./NavBar.css";
+import Menu from "../../Components/Headers/icon/menu.svg";
+import logo1 from "../../Images/logo6.png";
+import Content from "./ContentBar";
+=======
 
 import axios from "axios";
+>>>>>>> e34c5573068672bfc79f4d4e3de621a11d28e1c2
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -14,20 +22,11 @@ import "./NavBar.css";
 
 const NavBar = (props) => {
 	const [open, setOpen] = useState("false");
-	const [isActive, setActive] = useState("false");
 	const state = useContext(GlobalState);
 	const [isAdmin] = state.userAPI.isAdmin;
 	const [menu, setMenu] = useState(false);
 	const [isLoggedIn] = state.userAPI.isLoggedIn;
 
-	const handleToggle = () => {
-		setActive(!isActive);
-	};
-	const Wrapper = styled.div`
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-	`;
 	const logoutUser = async () => {
 		await axios.get("/user/logout");
 		localStorage.removeItem("firstLogin");
@@ -44,22 +43,17 @@ const NavBar = (props) => {
 
     return (
         <div className="header-nav">
-            <div className='burger-nav'>
-                <img className='nav-img' src={Burger} alt="menu" width='50px' height='50px'
-                    onClick={handleToggle}
-                />
-            </div>
             <Content />
 
             <nav fixed="top">
-                <div className={`main-nav ${isActive ? "" : "main-nav open"}`}>
-                    <Wrapper>
+                <div className={`main-nav`}>
+                    <div classname="wrapper">
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
                         {/* <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link> */}
                         <Link to="/coaching" className="nav-item" >Coaching Services</Link>
                         <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
                         <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
-                    </Wrapper>
+                    </div>
                     <div>
                         <div className="logo">
                             <h1>
@@ -67,7 +61,7 @@ const NavBar = (props) => {
                             </h1>
                         </div>
                     </div>
-                    <Wrapper>
+                    <div classname="wrapper">
                         <Link to="/about" className="nav-item" >About</Link>
                         {/* <Link className="nav-item"> */}
                         <Newsletter />
@@ -77,8 +71,34 @@ const NavBar = (props) => {
                         <li className="menu" onClick={() => setMenu(!menu)}>
                             <img src={Close} alt="CloseButton" width="30" className="menu" />
                         </li>
-                    </Wrapper>
-
+                    </div>
+                </div>
+                <div className="dropdown-nav">
+                    <div className="logo">
+                        <h1>
+                            <Link to="/">{isAdmin ? 'Admin' : <img src={logo1} alt="Politically Savvy Logo" width='300px' />}</Link>
+                        </h1>
+                    </div>
+                    <label htmlFor="bar-checker2" className='hamburger3'>
+                        <img src={Menu} alt="Menu" width="30" />
+                    </label>
+                    <input type="checkbox" className='checker' id="bar-checker2"/>
+                    <div className="dropdown-sidebar">
+                        <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
+                        {/* <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link> */}
+                        <Link to="/coaching" className="nav-item" >Coaching Services</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
+                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
+                        <Link to="/about" className="nav-item" >About</Link>
+                        {/* <Link className="nav-item"> */}
+                        <Newsletter />
+                        {/* </Link> */}
+                        <Link to="/contact" className="nav-item">Contact</Link>
+                        {isLoggedIn ? loggedInRouter() : <Link to="/login" className="nav-item">Login ✥ Register</Link>}
+                        <li className="menu" onClick={() => setMenu(!menu)}>
+                            <img src={Close} alt="CloseButton" width="30" className="menu" />
+                        </li>
+                    </div>
                 </div>
             </nav>
 

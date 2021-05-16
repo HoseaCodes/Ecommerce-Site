@@ -1,9 +1,19 @@
-.products {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.products{
+    display: flex;
     justify-content: center;
-    margin: 20px 0;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+}
+.my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -20px; /* gutter size offset */
+    width: auto;
+  }
+.my-masonry-grid_column {
+padding-left: 20px; /* gutter size */
+background-clip: padding-box;
 }
 
 @import url("./ProductItem/ProductItem.css");

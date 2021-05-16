@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 
 import axios from 'axios'
-
-import LoadMore from './loadMore';
+import LoadMore from './loadMore'
+import Masonry from 'react-masonry-css'
 import Loading from '../Utils/Loading';
 import ProductItem from './ProductItem/Productitem';
 import { GlobalState } from '../../../GlobalState';
@@ -55,6 +55,12 @@ const Products = () => {
             if (product.checked) deleteProduct(product._id, product.images.public_id)
         })
     }
+    /* for responsive masonry layout */
+    const breakpointColumnsObj = {
+        default: 3,
+        1400: 2,
+        900: 1
+      };
 
     if (loading) return <div className="products"><Loading /></div>
 
@@ -69,13 +75,14 @@ const Products = () => {
                 </div>
             }
             <div className="products">
-                {
-                    products.map(product => {
-                        return <ProductItem key={product._id} product={product}
-                            isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
-                    })
-                }
-
+                <Masonry breakpointCols={breakpointColumnsObj} className="my-masonry-grid" columnClassName="my-masonry-grid_column" >
+                    {
+                        products.map(product => {
+                            return <ProductItem key={product._id} product={product}
+                                isAdmin={isAdmin} deleteProduct={deleteProduct} handleCheck={handleCheck} />
+                        })
+                    }
+                </Masonry>
             </div>
             <LoadMore />
             {products.length === 0 && <Loading />}
