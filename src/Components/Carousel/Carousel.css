@@ -2,7 +2,9 @@
     font-family: "NewYork";
     src: url("../../Fonts/newyork/newyork.woff");
     }
-
+.carousel.slide{
+    margin-top: 125px;
+}
 .carousel-caption {
     bottom: -10% !important;
     left: 30% !important;

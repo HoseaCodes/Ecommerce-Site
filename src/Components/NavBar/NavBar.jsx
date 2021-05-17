@@ -38,7 +38,7 @@ const NavBar = (props) => {
         <div className="header-nav">
             <Content />
 
-            <nav fixed="top">
+            <nav >
                 <div className={`main-nav`}>
                     <div classname="wrapper">
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
@@ -69,11 +69,11 @@ const NavBar = (props) => {
                 <div className="dropdown-nav">
                     <div className="logo">
                         <h1>
-                            <Link to="/">{isAdmin ? 'Admin' : <img src={Logo} alt="Politically Savvy Logo" width='300px' />}</Link>
+                            <Link to="/">{isAdmin ? 'Admin' : <img src={Logo} alt="Politically Savvy Logo"/>}</Link>
                         </h1>
                     </div>
                     <label htmlFor="bar-checker2" className='hamburger3'>
-                        <img src={Menu} alt="Menu" width="30" />
+                        <img src={Burger} alt="Menu" width="30" />
                     </label>
                     <input type="checkbox" className='checker' id="bar-checker2"/>
                     <div className="dropdown-sidebar">

@@ -76,7 +76,7 @@ class Blog extends React.Component {
                         </section>
                     </div>
                 </div>
-                <div>
+                <div className="side-div">
                     <p>Yp</p>
                 </div>
             </div>
