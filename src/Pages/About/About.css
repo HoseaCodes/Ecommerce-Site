@@ -19,12 +19,13 @@
 
 .about-container {
   display: flex;
-  padding: 4%;
+  padding: 50px 20px 20px 20px;
   margin-top: 100px;
 }
 
 .about-img {
   width: 50%;
+  object-fit: cover;
 }
 
 .about-text {
@@ -101,4 +102,30 @@
   padding: 8%;
   width: 40%;
   margin: 0 auto;
+  object-fit: cover;
+}
+@media only screen and (max-width: 1000px) {
+  .about-container{
+    flex-direction: column-reverse;
+  }
+  .about-img{
+    width: 100%;
+    height: 300px;
+    object-position: center top;
+  }
+  .about-quote-div{
+    border:none;
+    margin:0;
+    padding: 20px 20px 0px 20px;
+  }
+  .about-quote-container{
+    width: 100%;
+    flex-direction: column;
+  }
+  .about-quote-container img {
+    width: 100%;
+    padding:0px 40px 40px 40px;
+    max-width: 720px;
+    height: 400px;
+  }
 }
