@@ -24,33 +24,44 @@
 .contact-container {
     padding: 10%;
     padding-bottom: 5%;
-    padding-top: 5%;
+    padding-top: 150px;
     text-transform: uppercase;
-    font-weight: 900;   
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .contact-title {
     font-size: 10rem;
     padding-top: 2%;
     font-family: 'NewYork';
+    max-width: 900px;
+    width: 100%;
 }
 
 .contact-descp {
     font-family: 'Oregon' !important;
     font-size: 1.5rem !important;
+    max-width: 900px;
+    width: 100%;
 }
 .contact-subtitle {
     font-family: 'NewYork';
     font-size: 10rem;
-    padding-left: 14%;
+    padding-left: 140px;
+    max-width: 900px;
+    width: 100%;
 }
 .contact-style {
     font-family: 'Photograph' !important;
     text-transform: capitalize !important;
-    margin-top: -7%;
-    padding-left: 38%;
+    margin-top: -60px;
+    padding-left: 420px;
     font-size: 12rem;
     color: lavender;
+    max-width: 900px;
+    width: 100%;
 }
 .contact-items {
 display: flex;
@@ -79,4 +90,60 @@ font-family: 'Oregon';
 .contact-item a {
     text-transform: lowercase;
     color: black;
+}
+@media only screen and (max-width: 1200px) {
+    .contact-title, .contact-subtitle{
+        font-size: 120px;
+        text-align: center;
+    }
+    .contact-style{
+        text-align: end;
+        padding: 0;
+        font-size: 120px;
+        margin-top: -40px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .contact-title, .contact-subtitle{
+        font-size: 70px;
+    }
+    .contact-style{
+        font-size: 70px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .contact-title, .contact-subtitle{
+        font-size: 70px;
+        padding:0
+    }
+    .contact-style{
+        font-size: 70px;
+        padding-top: 0;
+        text-align: center;
+    }
+    .contact-items{
+        padding-top: 50px;
+        flex-direction: column;
+        justify-content: flex-start;
+        max-width: 900px;
+        width: 100%;
+    }
+    .contact-item h4{
+        margin:0;
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .contact-title{
+        padding-top: 40px;
+    }
+    .contact-title, .contact-subtitle, .contact-style{
+        font-size: 40px;
+    }
+    .contact-item{
+        font-size: .7rem;
+    }
+    .contact-item h4{
+        font-size: 1rem;
+    }
 }

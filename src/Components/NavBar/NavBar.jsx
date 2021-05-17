@@ -4,7 +4,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Burger from "../../Images/burger.jpg";
+import Burger from "./icon/menu.svg";
 import Close from "../Headers/icon/close.svg";
 import Content from "./ContentBar";
 import Logo from "../../Images/logo6.png";
