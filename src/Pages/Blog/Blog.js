@@ -12,7 +12,7 @@ class BlogPage extends Component {
         return (
             <div className="app">
                 <NavBar />
-                <h3 className="category-title">CATEGORY: &nbsp;BLOG</h3>
+                <h3 style={{marginTop:'145px',marginBottom:'20px', padding:'0'}} className="category-title">CATEGORY: &nbsp;BLOG</h3>
                 <Blog />
             </div>
         )

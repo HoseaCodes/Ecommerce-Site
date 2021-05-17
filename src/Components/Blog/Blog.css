@@ -14,23 +14,32 @@
   padding-top: 10%;
 }
 
-.blog-card {
-  padding: 2%;
-  border-bottom: 1px solid gray;
-  border-right: 1px solid gray;
-}
-
 .blog-container {
   display: grid;
-  grid-template-columns: 65% 35%;
-  margin-top: 8%;
+  grid-template-columns: 75% 25%;
+  margin-top: 0px;
   border-top: 1px solid black;
 }
 
-.blog-content {
-  padding: 4% 0 4% 15%;
+.blog-card {
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+  display: flex;
+  justify-content: flex-end;
 }
 
+.blog-content {
+  padding: 0;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1050px;
+}
+.blog-img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
 .category-title {
   font-family: "NewYork";
   font-size: 1.3rem;
@@ -52,4 +61,12 @@
 
 .blog-card-wrapper p {
   padding-top: 10%;
+}
+@media only screen and (max-width: 1000px) {
+  .side-div{
+    display: none;
+  }
+  .blog-container {
+    grid-template-columns: 1fr;
+  }
 }

@@ -30,7 +30,7 @@ class BlogCard extends Component {
         return (
             <div className="blog-card">
                 <Wrapper className='blog-content'>
-                    <img className='blog-img' width="450rem" src={img} alt={name} />
+                    <img className='blog-img' src={img} alt={name} />
                     <Wrapper2 className="blog-card-wrapper">
                         <h5>{category}</h5>
                         <Link to={`/specificBlog/${_id}`}>
