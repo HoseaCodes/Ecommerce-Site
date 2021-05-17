@@ -1,45 +1,55 @@
 @font-face {
-    font-family: "Oregon";
-    src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
-    }
+  font-family: "Oregon";
+  src: url("../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+}
 
 .ft-copyright {
-    background-color: gray;
-    display: flex;
+  background-color: gray;
+  display: flex;
 }
 
 .pb-2,
 .py-2 {
-    padding-bottom: .5rem !important;
-    padding-top: .5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-top: 0.5rem !important;
 }
 
 .footer-top {
-    background-color: whitesmoke;
-    padding: 2%;
-    font-family: "Oregon";
+  background-color: black;
+  color: white;
+  padding: 2%;
+  font-family: "Oregon";
+}
+
+.footer-link {
+  color: white;
+}
+
+.footer-link:hover {
+  color: purple;
+  text-decoration: none;
 }
 
 .text-center {
-    text-align: center !important;
+  text-align: center !important;
 }
 
 footer p {
-    color: gray;
-    margin-bottom: 10px;
+  color: gray;
+  margin-bottom: 10px;
 }
 
 .footer-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid gray;
-    margin-bottom: 4%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid gray;
+  margin-bottom: 4%;
 }
 
 .footer-social {
-    width: 100%;
+  width: 100%;
 }
 
 .footer-social span {
-    padding: 2%;
+  padding: 2%;
 }

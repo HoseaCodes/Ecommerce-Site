@@ -66,18 +66,8 @@ const Header = () => {
 		<input type="checkbox" className='checker' id="bar-checker"/>
 		<header>
 			<section id="sidebar">
-				<p>
-					{" "}
-					Home | <b>All Breads</b>
-				</p>
-				<div class="border-bottom pb-2 ml-2">
-					<h4 id="burgundy">Filters</h4>
-				</div>
-				<div class="py-2 border-bottom ml-3">
+				{/* <div class="py-2 border-bottom ml-3">
 					<h6 class="font-weight-bold">CATEGORIES</h6>
-					{/* <div id="orange">
-						<span class="fa fa-minus"></span>
-					</div> */}
 					<form>
 						<div class="form-group">
 							{" "}
@@ -95,12 +85,9 @@ const Header = () => {
 							<label htmlFor="healthy">Healthy Breads</label>{" "}
 						</div>
 					</form>
-				</div>
-				<div class="py-2 border-bottom ml-3">
+				</div> */}
+				{/* <div class="py-2 border-bottom ml-3">
 					<h6 class="font-weight-bold">ACCOMPANIMENTS</h6>
-					{/* <div id="orange">
-						<span class="fa fa-minus"></span>
-					</div> */}
 					<form>
 						<div class="form-group">
 							{" "}
@@ -128,24 +115,7 @@ const Header = () => {
 							<label htmlFor="choco">Chocolates</label>{" "}
 						</div>
 					</form>
-				</div>
-				<div class="py-2 ml-3">
-					<h6 class="font-weight-bold">TOP OFFERS</h6>
-					<form>
-						<div class="form-group">
-							{" "}
-							<input type="checkbox" id="25off" />{" "}
-							<label htmlFor="25off">25% off</label>{" "}
-						</div>
-						<div class="form-group">
-							{" "}
-							<input type="checkbox" id="5off" />{" "}
-							<label htmlFor="5off" id="off">
-								5% off on artisan breads
-							</label>{" "}
-						</div>
-					</form>
-				</div>
+				</div> */}
 			{isAdmin ? (
 				""
 			) : (
@@ -157,16 +127,14 @@ const Header = () => {
 					</Link>
 				</div>
 			)}
+			<br/> <br/>
 			<ul style={styleMenu}>
-				<li>
-					<Link to="/">{isAdmin ? "Products" : "Shop"}</Link>
-				</li>
 				{isAdmin && adminRouter()}
 				{isLoggedIn ? (
 					loggedInRouter()
 				) : (
 					<li>
-						<Link to="/login">Login ✥ Register</Link>
+						{/* <Link to="/login">Login ✥ Register</Link> */}
 					</li>
 				)}
 
