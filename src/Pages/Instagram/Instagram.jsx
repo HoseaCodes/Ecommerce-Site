@@ -10,7 +10,7 @@ const Instagram = () => {
     return (
         <>
         <NavBar/>
-        <InstagramFeed token={your_token}  counter="6"/>
+        <InstagramFeed counter="6"/>
         <Footer />
         </>
 
