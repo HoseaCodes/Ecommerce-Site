@@ -14,6 +14,7 @@ import Create from "./Components/MainShopPages/CreateProduct/createProduct";
 import DetailProduct from "./Components/MainShopPages/DetailProduct/DetailProduct";
 import Error from './Pages/Error/Error';
 import Home from './Pages/Home/Home';
+import Instagram from './Pages/Instagram/Instagram';
 import Login from "./Components/MainShopPages/Auth/Login";
 import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
 import OrderDetails from "./Components/MainShopPages/History/orderDetails";
@@ -76,38 +77,38 @@ export default class App extends Component {
 					<Switch>
 						<DataProvider>
 
-              <Route exact path="/blog" render={()=>(<BlogPage/>)}/>
-              <Route exact path="/specificBlog/:id" render={()=>(<SpecificBlogPage/>)}/>
-              <Route path="/products" exact component={Products} />
-              <Route path="/detail/:id" exact component={DetailProduct} />
-              <Route path="/login" exact component={this.props.isLoggedIn ? NotFound : Login} />
-              <Route path="/register" exact component={this.props.isLoggedIn ? NotFound : Register} />
-              <Route path="/category" exact component={this.props.isAdmin ? Category : NotFound} />
-              <Route path="/create_product" exact component={this.props.isAdmin ? Create : NotFound} />
-              <Route path="/edit_product" exact component={this.props.isAdmin ? Create : NotFound} />
-              <Route path="/history" exact component={this.props.isLoggedIn ? OrderHistory : NotFound} />
-              <Route path="/history/:id" exact component={this.props.isLoggedIn ? OrderDetails : NotFound} />
-              <Route path="/cart" exact component={Cart} />
-              {/* <Route path="*" exact component={NotFound} /> */}
-              <Route
-                exact
-                path="/admin"
-                render={() => (
-                  <Admin
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/admin/addBlog"
-                render={() => (
-                  <AddBlog
-                  />
-                )}
-              />
-              {/* <Error /> */}
+							<Route exact path="/blog" render={()=>(<BlogPage/>)}/>
+							<Route exact path="/specificBlog/:id" render={()=>(<SpecificBlogPage/>)}/>
+							<Route path="/products" exact component={Products} />
+							<Route path="/detail/:id" exact component={DetailProduct} />
+							<Route path="/login" exact component={this.props.isLoggedIn ? NotFound : Login} />
+							<Route path="/register" exact component={this.props.isLoggedIn ? NotFound : Register} />
+							<Route path="/category" exact component={this.props.isAdmin ? Category : NotFound} />
+							<Route path="/create_product" exact component={this.props.isAdmin ? Create : NotFound} />
+							<Route path="/edit_product" exact component={this.props.isAdmin ? Create : NotFound} />
+							<Route path="/history" exact component={this.props.isLoggedIn ? OrderHistory : NotFound} />
+							<Route path="/history/:id" exact component={this.props.isLoggedIn ? OrderDetails : NotFound} />
+							<Route path="/cart" exact component={Cart} />
+							{/* <Route path="*" exact component={NotFound} /> */}
+							<Route
+								exact
+								path="/admin"
+								render={() => (
+								<Admin
+								/>
+								)}
+							/>
+							<Route
+								exact
+								path="/admin/addBlog"
+								render={() => (
+								<AddBlog
+								/>
+								)}
+							/>
 							<Route exact path="/" render={() => <Splash />} />
 							<Route exact path="/shop" render={() => <Shop />} />
+							<Route exact path="/instagram" render={() => <Instagram/>} />
 							<Route exact path="/coaching" render={() => <Coaching />} />
 							<Route exact path="/admin" render={() => <Admin />} />
 							<Route exact path="/about" render={() => <About />} />

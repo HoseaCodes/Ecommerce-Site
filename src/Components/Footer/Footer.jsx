@@ -15,18 +15,24 @@ const Footer = () => {
                                 placeholder="Email Address"
                                 type="email" name="" />
                             <br />
-                            <a href="">Sign Up</a>
+                            <a className="footer-link" href="">Sign Up</a>
                             <p>By clicking SIGN UP, you agree to receive emails from Poosh and agree to our terms of use and privacy policy.</p>
-                            <li>Made By <a href="">HoseaCodes</a> </li>
+                        </ul>
+                    </div>
+                    <div className="col-sm-3 col-xs-12  border-left">
+                        <ul className="list-unstyled mt-3">
+                            <li><a className="footer-link" href="#" >About</a></li>
+                            <div className="mb-2"></div>
+                            <li><a className="footer-link" href="#" >Contact</a></li>
                         </ul>
                     </div>
                     <div className="col-sm-3 border-left">
                         <ul className="list-unstyled mt-3">
-                            <li><a href="#" >Cookie Policy</a></li>
+                            <li><a className="footer-link" href="#" >Cookie Policy</a></li>
                             <div className="mb-2"></div>
-                            <li><a href="#" >Privacy Policy</a></li>
+                            <li><a className="footer-link" href="#" >Privacy Policy</a></li>
                             <div className="mb-2"></div>
-                            <li><a href="#" >Terms & Conditions</a></li>
+                            <li><a className="footer-link" href="#" >Terms & Conditions</a></li>
                         </ul>
                         <ul className="list-unstyled mt-3">
                             <li>&copy; Poltically Savvy LLC</li>
@@ -34,14 +40,6 @@ const Footer = () => {
                             <li>All  Rights Reserved</li>
                         </ul>
                     </div>
-                    <div className="col-sm-3 col-xs-12  border-left">
-                        <ul className="list-unstyled mt-3">
-                            <li><a href="#" >About</a></li>
-                            <div className="mb-2"></div>
-                            <li><a href="#" >Contact</a></li>
-                        </ul>
-                    </div>
-
                     <div className="col-sm-3 border-left">
                         <ul className="list-unstyled mt-3">
                             <li>Keep in Touch</li>
@@ -55,7 +53,7 @@ const Footer = () => {
                                     </li>
                                 </div>
                             </div>
-                            <li>Made By <a href="">HoseaCodes</a> </li>
+                            <li>Made By <a className="footer-link" href="">HoseaCodes</a> </li>
                         </ul>
                     </div>
                 </div>

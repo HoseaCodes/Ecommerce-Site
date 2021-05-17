@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Burger from "./icon/menu.svg";
 import Close from "../Headers/icon/close.svg";
 import Content from "./ContentBar";
+import Menu from "../../Components/Headers/icon/menu.svg";
 import Logo from "../../Images/logo6.png";
 import Newsletter from "../../Pages/Newsletter/Newsletter";
 import { GlobalState } from "../../GlobalState";
@@ -44,7 +45,7 @@ const NavBar = (props) => {
                         {/* <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link> */}
                         <Link to="/coaching" className="nav-item" >Coaching Services</Link>
                         <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
-                        <Link to="/shop" className="nav-item">{isAdmin ? 'Products' : 'Shop'}</Link>
+                        <Link to="/instagram" className="nav-item">{isAdmin ? null : 'Instagram'}</Link>
                     </div>
                     <div>
                         <div className="logo">

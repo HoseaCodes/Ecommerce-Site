@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import Footer from "../../../Components/Footer/Footer";
-import Logo from "../../../Images/logo1.png";
+import Logo from "../../../Images/logo6.png";
 import "./Login.css";
 
 const Login = () => {
@@ -36,7 +36,7 @@ const Login = () => {
 					<img className="brand" src={Logo} alt="brand-name" />
 				</Link>
 				<form onSubmit={loginSubmit}>
-					<h2>Sign in to your account</h2>
+					<h2 className="login-title">Sign in to your account</h2>
 					<p></p>
 					<label htmlFor="e-mail">E-mail</label>
 					<input

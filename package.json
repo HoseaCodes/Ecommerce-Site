@@ -23,6 +23,7 @@
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.14.0",
+    "react-ig-feed": "^1.0.4",
     "react-infinite-scroll-component": "^5.1.0",
     "react-masonry-css": "^1.0.16",
     "react-particles-js": "^3.4.1",

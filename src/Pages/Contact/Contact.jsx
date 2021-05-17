@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Components/Footer/Footer';
 
 import NavBar from '../../Components/NavBar/NavBar';
 import './Contact.css'
@@ -43,6 +44,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </>
     )
 }

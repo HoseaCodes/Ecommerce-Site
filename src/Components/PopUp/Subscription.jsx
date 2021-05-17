@@ -1,8 +1,6 @@
 import React from 'react';
-
 import styled from 'styled-components';
 import { Button, Modal } from 'react-bootstrap';
-
 import One from '../../Images/1.png';
 
 
