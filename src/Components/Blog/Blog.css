@@ -13,31 +13,36 @@
   font-size: 2rem;
   padding-top: 10%;
 }
-
 .blog-container {
   display: grid;
   grid-template-columns: 75% 25%;
   margin-top: 0px;
   border-top: 1px solid black;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
 }
-
 .blog-card {
-  padding: 20px;
+  padding: 20px 20px 20px 0px;
   border-bottom: 1px solid gray;
   border-right: 1px solid gray;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+
 }
 
 .blog-content {
   padding: 0;
   display: grid !important;
   grid-template-columns: 1fr 1fr;
-  max-width: 1050px;
+  width: 100%;
 }
 .blog-img{
   width: 100%;
   object-fit: cover;
+  max-height: 600px;
   height: 100%;
 }
 .category-title {
@@ -68,5 +73,8 @@
   }
   .blog-container {
     grid-template-columns: 1fr;
+  }
+  .blog-card{
+    padding: 20px;
   }
 }
