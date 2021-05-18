@@ -141,24 +141,10 @@ const Header = () => {
 					<img src={Close} alt="CloseButton" width="30" className="menu" />
 				</li>
 			</ul>
-<<<<<<< Updated upstream
 			</section>
 			{/* <div className="menu" onClick={() => setMenu(!menu)}>
 				<img src={Menu} alt="Menu" width="30" />
 			</div> */}
-=======
-
-			{isAdmin ? (
-				""
-			) : (
-				<div className="cart-icon">
-					<span>{cart.length}</span>
-					<Link to="/cart">
-						<img src={Cart} alt="Shoppingcart" width="30" />
-					</Link>
-				</div>
-			)}
->>>>>>> Stashed changes
 		</header>
 		</>
 	);
