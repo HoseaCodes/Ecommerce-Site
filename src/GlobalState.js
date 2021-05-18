@@ -36,3 +36,7 @@ export const DataProvider = ({ children }) => {
 	ProductsAPI();
 	return <GlobalState.Provider value={state}>{children}</GlobalState.Provider>;
 };
+
+// export const isLoggedInState = () => {
+// 	return { isLoggedIn: UserAPI() };
+// };
