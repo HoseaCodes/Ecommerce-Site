@@ -1,0 +1,36 @@
+.rdw-editor-toolbar {
+	position: absolute !important;
+	/* padding: 0 25%; */
+	top: -15%;
+	left: 10%;
+	right: 10%;
+	/* width: 100%; */
+	text-align: center;
+	z-index: 999;
+}
+
+.rdw-editor-main {
+	position: relative !important;
+	border: 1px solid black;
+}
+
+/* #style-blog .row {
+	border: 1px solid black;
+} */
+
+#style-blog label {
+	display: flex;
+}
+
+#style-blog .editor-container {
+	position: relative;
+}
+
+#style-blog {
+	border: 1px solid grey;
+}
+
+#style-blog form {
+	margin: auto;
+	width: 90%;
+}

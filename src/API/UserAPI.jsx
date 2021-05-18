@@ -37,7 +37,7 @@ function UserAPI(token) {
 
 			await axios.patch(
 				"/user/addcart",
-				{ cart: [...cart, { ...product, quanity: 1 }] },
+				{ cart: [...cart, { ...product, quantity: 1 }] },
 				{
 					headers: { Authorization: token },
 				}
