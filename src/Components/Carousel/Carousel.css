@@ -20,11 +20,48 @@
     text-transform: uppercase;
     font-size: 3rem;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     .carousel-caption h3{
         font-size: 30px;
     }
     .carousel-caption p{
         font-size: 18px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .carousel-caption h3{
+        font-size: 20px;
+        margin: 0;
+    }
+    .carousel-caption p{
+        font-size: 15px;
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .carousel-caption h3{
+        font-size: 18px;
+    }
+    .carousel-caption p{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .carousel-caption h3{
+        font-size: 15px;
+    }
+    .carousel-caption p{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .carousel-caption div{
+        padding: 5px;
+    }
+    .carousel-caption h3{
+        font-size: 12px;
+    }
+    .carousel-caption p{
+        font-size: 12px;
     }
 }
