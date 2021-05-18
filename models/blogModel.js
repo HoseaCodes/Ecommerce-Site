@@ -1,18 +1,21 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const blogSchema = new mongoose.Schema({
-	category: String,
-	name: String,
-	date: Date,
-	img: String,
-	title: String,
-	type: String,
-	info: String,
-	subHeading: [String],
-	tags: [String],
-	link: String,
-}, {
-    timestamps: true
-})
+const blogSchema = new mongoose.Schema(
+	{
+		category: Object,
+		name: Object,
+		date: Object,
+		// img: String,
+		title: Object,
+		type: Object,
+		info: Object,
+		subHeading: Object,
+		tags: Object,
+		link: Object,
+	},
+	{
+		timestamps: true,
+	}
+);
 
 module.exports = mongoose.model("Blog", blogSchema);

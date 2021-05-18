@@ -1,33 +1,31 @@
-import React, { Component } from 'react';
-
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
-import About from './Pages/About/About';
-import AddBlog from './Pages/Admin/AddBlog/AddBlog';
-import Admin from './Pages/Admin/Admin';
-import BlogPage from './Pages/Blog/Blog';
-import Cart from "./Components/MainShopPages/Cart/Cart";
-import Category from "./Components/MainShopPages/Categories/categories";
-import Coaching from './Pages/Coaching/Coaching'
-import Contact from './Pages/Contact/Contact';
-import Create from "./Components/MainShopPages/CreateProduct/createProduct";
-import DetailProduct from "./Components/MainShopPages/DetailProduct/DetailProduct";
-import Error from './Pages/Error/Error';
-import Home from './Pages/Home/Home';
-import Instagram from './Pages/Instagram/Instagram';
+import React, { Component, useEffect, useState, useContext } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./Pages/Home/Home";
+import Coaching from "./Pages/Coaching/Coaching";
+import BlogPage from "./Pages/Blog/Blog";
+import SpecificBlogPage from "./Pages/Blog/SpecificBlog";
+import Admin from "./Pages/Admin/Admin";
 import Login from "./Components/MainShopPages/Auth/Login";
-import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
-import OrderDetails from "./Components/MainShopPages/History/orderDetails";
-import OrderHistory from "./Components/MainShopPages/History/orderHistory";
+import Cart from "./Components/MainShopPages/Cart/Cart";
+import AddBlog from "./Pages/Admin/AddBlog/AddBlog";
+import Contact from "./Pages/Contact/Contact";
+import About from "./Pages/About/About";
+import Shop from "./Pages/Shop/Shop";
+import Splash from "./Pages/Splash/Slpash";
+import Error from "./Pages/Error/Error";
 import Particles from "./Components/Particles/Particles";
 import Products from "./Components/MainShopPages/Products/Products";
 import Register from "./Components/MainShopPages/Auth/Register";
-import Shop from './Pages/Shop/Shop';
-import SpecificBlogPage from './Pages/Blog/SpecificBlog';
-import Splash from './Pages/Splash/Slpash';
-import { DataProvider } from './GlobalState';
-import { GlobalState } from './GlobalState';
-import './App.css';
+import OrderHistory from "./Components/MainShopPages/History/orderHistory";
+import OrderDetails from "./Components/MainShopPages/History/orderDetails";
+import DetailProduct from "./Components/MainShopPages/DetailProduct/DetailProduct";
+import Category from "./Components/MainShopPages/Categories/categories";
+import Create from "./Components/MainShopPages/CreateProduct/createProduct";
+import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
+import { DataProvider, GlobalState } from "./GlobalState";
+import UserAPI from "./API/UserAPI";
+import axios from "axios";
 
 const styles = {
 	root: {
@@ -42,7 +40,7 @@ const styles = {
 	},
 };
 
-const Global = React.createContext(GlobalState);
+// const Global = React.createContext(GlobalState);
 
 // On page load loading feature
 const Loader = () => (
@@ -51,76 +49,194 @@ const Loader = () => (
 	</div>
 );
 
-export default class App extends Component {
-	state = {
-		user: null,
-		authenticated: false,
-		loading: true,
-		// isLoggedIn: global.userAPI.isLoggedIn,
-		// isAdmin: global.userAPI.isAdmin
-	};
+const App = () => {
+	const [token, setToken] = useState(false);
+	const [user, setUser] = useState(null);
+	const [authenticated, isAuthenticated] = useState(false);
+	const [loading, setLoading] = useState(true);
 
-	componentDidMount() {
-		// this simulates an async action, after which the component will render the content
-		demoAsyncCall().then(() => this.setState({ loading: false }));
-	}
+	useEffect(() => {
+		demoAsyncCall().then(() => {
+			setLoading(false);
+		});
+	}, [loading]);
 
-	// static contextType = GlobalState;
+	useEffect(() => {
+		const firstLogin = localStorage.getItem("firstLogin");
+		if (firstLogin) {
+			const refreshToken = async () => {
+				const res = await axios.get("/user/refresh_token");
+				setToken(res.data.accesstoken);
 
-	render() {
-		// const global = this.context;
-		// console.log(Global.Provider)
-		return (
-			<>
-				{this.state.loading ? <Loader /> : null}
-				<BrowserRouter>
-					<Switch>
-						<DataProvider>
+				setTimeout(() => {
+					refreshToken();
+				}, 10 * 60 * 1000);
+			};
 
-							<Route exact path="/blog" render={()=>(<BlogPage/>)}/>
-							<Route exact path="/specificBlog/:id" render={()=>(<SpecificBlogPage/>)}/>
-							<Route path="/products" exact component={Products} />
-							<Route path="/detail/:id" exact component={DetailProduct} />
-							<Route path="/login" exact component={this.props.isLoggedIn ? NotFound : Login} />
-							<Route path="/register" exact component={this.props.isLoggedIn ? NotFound : Register} />
-							<Route path="/category" exact component={this.props.isAdmin ? Category : NotFound} />
-							<Route path="/create_product" exact component={this.props.isAdmin ? Create : NotFound} />
-							<Route path="/edit_product" exact component={this.props.isAdmin ? Create : NotFound} />
-							<Route path="/history" exact component={this.props.isLoggedIn ? OrderHistory : NotFound} />
-							<Route path="/history/:id" exact component={this.props.isLoggedIn ? OrderDetails : NotFound} />
-							<Route path="/cart" exact component={Cart} />
-							{/* <Route path="*" exact component={NotFound} /> */}
-							<Route
-								exact
-								path="/admin"
-								render={() => (
-								<Admin
-								/>
-								)}
-							/>
-							<Route
-								exact
-								path="/admin/addBlog"
-								render={() => (
-								<AddBlog
-								/>
-								)}
-							/>
-							<Route exact path="/" render={() => <Splash />} />
-							<Route exact path="/shop" render={() => <Shop />} />
-							<Route exact path="/instagram" render={() => <Instagram/>} />
-							<Route exact path="/coaching" render={() => <Coaching />} />
-							<Route exact path="/admin" render={() => <Admin />} />
-							<Route exact path="/about" render={() => <About />} />
-							<Route exact path="/contact" render={() => <Contact />} />
-							{/* <Error /> */}
-						</DataProvider>
-					</Switch>
-				</BrowserRouter>
-			</>
-		);
-	}
-}
+			refreshToken();
+		}
+	}, []);
+
+	const [isLoggedIn] = UserAPI(token).isLoggedIn;
+	const [isAdmin] = UserAPI(token).isAdmin;
+
+	return (
+		<>
+			{loading ? <Loader /> : null}
+			<BrowserRouter>
+				<Switch>
+					<DataProvider>
+						<Route exact path="/blog" render={() => <BlogPage />} />
+						<Route
+							exact
+							path="/specificBlog/:id"
+							render={() => <SpecificBlogPage />}
+						/>
+						<Route path="/products" exact component={Products} />
+						<Route path="/detail/:id" exact component={DetailProduct} />
+						<Route
+							path="/login"
+							exact
+							component={isLoggedIn ? NotFound : Login}
+						/>
+						<Route
+							path="/register"
+							exact
+							component={isLoggedIn ? NotFound : Register}
+						/>
+						<Route
+							path="/category"
+							exact
+							component={isAdmin ? Category : NotFound}
+						/>
+						<Route
+							path="/create_product"
+							exact
+							component={isAdmin ? Create : NotFound}
+						/>
+						<Route
+							path="/edit_product"
+							exact
+							component={isAdmin ? Create : NotFound}
+						/>
+						<Route
+							path="/history"
+							exact
+							component={isLoggedIn ? OrderHistory : NotFound}
+						/>
+						<Route
+							path="/history/:id"
+							exact
+							component={isLoggedIn ? OrderDetails : NotFound}
+						/>
+						<Route path="/cart" exact component={Cart} />
+						{/* <Route path="*" exact component={NotFound} /> */}
+						<Route exact path="/admin" render={() => <Admin />} />
+						<Route exact path="/admin/addBlog" render={() => <AddBlog />} />
+						{/* <Error /> */}
+						<Route exact path="/" render={() => <Splash />} />
+						<Route exact path="/shop" render={() => <Shop />} />
+						<Route exact path="/coaching" render={() => <Coaching />} />
+						<Route exact path="/admin" render={() => <Admin />} />
+						<Route exact path="/about" render={() => <About />} />
+						<Route exact path="/contact" render={() => <Contact />} />
+						{/* <Error /> */}
+					</DataProvider>
+				</Switch>
+			</BrowserRouter>
+		</>
+	);
+};
+// export default class App extends Component {
+// 	state = {
+// 		user: null,
+// 		authenticated: false,
+// 		loading: true,
+// 		isLoggedIn: Global.userAPI.isAdmin,
+// 		// isAdmin: Global.userAPI.isAdmin,
+// 	};
+
+// 	componentDidMount() {
+// 		// this simulates an async action, after which the component will render the content
+// 		demoAsyncCall().then(() => this.setState({ loading: false }));
+// 		// console.log(isLoggedInState);
+// 	}
+
+// 	// static contextType = GlobalState;
+
+// 	render() {
+// const global = this.context;
+// console.log(Global.Provider)
+// 	return (
+// 		<>
+// 			{loading ? <Loader /> : null}
+// 			<BrowserRouter>
+// 				<Switch>
+// 					<DataProvider>
+// 						<Route exact path="/blog" render={() => <BlogPage />} />
+// 						<Route
+// 							exact
+// 							path="/specificBlog/:id"
+// 							render={() => <SpecificBlogPage />}
+// 						/>
+// 						<Route path="/products" exact component={Products} />
+// 						<Route path="/detail/:id" exact component={DetailProduct} />
+// 						<Route
+// 							path="/login"
+// 							exact
+// 							component={this.state.isLoggedIn ? NotFound : Login}
+// 						/>
+// 						<Route
+// 							path="/register"
+// 							exact
+// 							component={this.state.isLoggedIn ? NotFound : Register}
+// 						/>
+// 						<Route
+// 							path="/category"
+// 							exact
+// 							component={this.state.isAdmin ? Category : NotFound}
+// 						/>
+// 						<Route
+// 							path="/create_product"
+// 							exact
+// 							component={this.state.isAdmin ? Create : NotFound}
+// 						/>
+// 						<Route
+// 							path="/edit_product"
+// 							exact
+// 							component={this.state.isAdmin ? Create : NotFound}
+// 						/>
+// 						<Route
+// 							path="/history"
+// 							exact
+// 							component={this.state.isLoggedIn ? OrderHistory : NotFound}
+// 						/>
+// 						<Route
+// 							path="/history/:id"
+// 							exact
+// 							component={this.state.isLoggedIn ? OrderDetails : NotFound}
+// 						/>
+// 						<Route path="/cart" exact component={Cart} />
+// 						{/* <Route path="*" exact component={NotFound} /> */}
+// 						<Route exact path="/admin" render={() => <Admin />} />
+// 						<Route exact path="/admin/addBlog" render={() => <AddBlog />} />
+// 						{/* <Error /> */}
+// 						<Route exact path="/" render={() => <Splash />} />
+// 						<Route exact path="/shop" render={() => <Shop />} />
+// 						<Route exact path="/coaching" render={() => <Coaching />} />
+// 						<Route exact path="/admin" render={() => <Admin />} />
+// 						<Route exact path="/about" render={() => <About />} />
+// 						<Route exact path="/contact" render={() => <Contact />} />
+// 						{/* <Error /> */}
+// 					</DataProvider>
+// 				</Switch>
+// 			</BrowserRouter>
+// 		</>
+// 	);
+// };
+// }
+
+export default App;
 
 function demoAsyncCall() {
 	return new Promise((resolve) => setTimeout(() => resolve(), 5500));

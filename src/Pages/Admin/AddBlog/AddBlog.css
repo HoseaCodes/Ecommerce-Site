@@ -1,0 +1,44 @@
+.react-page-cell-insert-new {
+	width: 100% !important;
+}
+
+.react-page-editable {
+	width: 80%;
+}
+.editor {
+	margin: auto;
+	width: 100%;
+	border: 1px solid black;
+}
+
+.editor-label {
+	text-align: center;
+	margin: 5px 0;
+	border-bottom: 1px solid black;
+}
+
+#name-and-title {
+	width: 100%;
+	margin: auto;
+}
+
+#add-blog .control-label {
+	/* width: 100px; */
+	float: left;
+}
+#add-blog .form-group {
+	display: block;
+}
+
+#add-blog .form-control {
+	margin: auto;
+	width: 100%;
+}
+
+/* #add-blog .ce-toolbar {
+	display: none;
+} */
+/* #add-blog .row,
+#add-blog .col {
+	padding: 0;
+} */

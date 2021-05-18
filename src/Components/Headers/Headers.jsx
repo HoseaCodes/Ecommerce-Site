@@ -57,7 +57,6 @@ const Header = () => {
 		marginTop: "-10px"
 	};
 
-	console.log(isLoggedIn);
 	return (
 		<>
 		<label htmlFor="bar-checker" className='hamburger2'>
