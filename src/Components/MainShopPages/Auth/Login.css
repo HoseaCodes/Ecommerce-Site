@@ -4,14 +4,17 @@
 }
 
 .login-page {
-  /* max-width: 500px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
   padding: 30px;
   margin: 50px auto;
   margin: auto;
-  width: 600px;
+  width: 100%;
   text-align: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 .login-page h2 {
@@ -22,8 +25,7 @@
 }
 
 .login-page form {
-  width: 350px;
-  margin: auto;
+  width: 30%;
 }
 
 .login-title {
@@ -86,6 +88,32 @@
 }
 
 #login-page-container .brand {
-  width: 100%;
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 1475px) {
+  #login-page-container .brand {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .login-page form {
+    width: 40%;
+  }
+  .login-page h2 {
+    font-size: 2rem;
+    margin: 30px auto;
+  }
+}
+@media only screen and (max-width: 975px) {
+  #login-page-container .brand {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .login-page form {
+    width: 60%;
+  }
+  .login-page h2 {
+    font-size: 2rem;
+    margin: 30px auto;
+  }
 }
