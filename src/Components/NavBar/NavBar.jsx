@@ -40,7 +40,7 @@ const NavBar = (props) => {
 
             <nav >
                 <div className={`main-nav`}>
-                    <div classname="wrapper">
+                    <div>
                         <Link to="/blog" className="nav-item" /*onMouseOver={() => setOpen(!open)}*/>Blog</Link>
                         {/* <Link to="/masterclasses" className="nav-item" onMouseOver={() => setOpen(!open)}>Master Classes</Link> */}
                         <Link to="/coaching" className="nav-item" >Coaching Services</Link>
@@ -54,7 +54,7 @@ const NavBar = (props) => {
                             </h1>
                         </div>
                     </div>
-                    <div classname="wrapper">
+                    <div>
                         <Link to="/about" className="nav-item" >About</Link>
                         {/* <Link className="nav-item"> */}
                         <Newsletter />

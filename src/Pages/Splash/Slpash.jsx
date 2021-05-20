@@ -14,7 +14,7 @@ class Splash extends Component {
             <div className="app">
                 <NavBar />
                 <MainCarousel />
-                <Blog />
+                {/* <Blog /> */}
             </div>
         )
     }
