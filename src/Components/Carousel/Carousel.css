@@ -2,66 +2,126 @@
     font-family: "NewYork";
     src: url("../../Fonts/newyork/newyork.woff");
     }
-.carousel.slide{
+.carousel-page-wrapper{
+    overflow: hidden;
+}
+.carousel-wrapper{
+    min-height: 500px;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    position: relative;
     margin-top: 125px;
+    margin-bottom: 105px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    transition: .5s !important;
 }
-.carousel-caption {
-    bottom: -10% !important;
-    left: 30% !important;
-    width: 90% !important;
+.carousel-caption-wrapper{
+    min-height: 200px;
+    height: 100%;
+    max-height: 400px;
+    width: 100%;
+    max-width: 560px;
+    background-color: white;
+    z-index: 1;
+    margin-bottom: -95px;
+    -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.13); 
+    box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.13);
+    position: relative;
+    box-sizing: border-box;
 }
-.carousel-caption p {
+.carousel-caption-container{
+    transition: .5s;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: black;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+.carousel-caption-container h1{
+    font-size: 3rem;
     font-family: 'NewYork';
-    font-size: larger;
+}
+.carousel-caption-container p{
+    font-size: 1.2rem;
+    font-family: 'Oregon';
+}
+.carousel-image-wrapper{
+    height: 100%;
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    transition: .5s;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center;
 }
 
-.carousel-caption h3 {
-    font-family: 'NewYork';
-    text-transform: uppercase;
-    font-size: 3rem;
+.background-image{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
 }
-@media only screen and (max-width: 1200px) {
-    .carousel-caption h3{
-        font-size: 30px;
-    }
-    .carousel-caption p{
-        font-size: 18px;
+.carousel-wrapper img{
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+    z-index: -1;
+    transition: .5s;
+    filter: blur(6px);
+    margin:-10px;
+}
+.carousel-wrapper button{
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding:15px ;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    border:none;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-wrapper button:hover{
+    background-color: #dddddd;
+}
+.carousel-wrapper button img{
+    object-fit: contain;
+    height: 20px;
+    width: 20px;
+    filter: blur(0px);
+}
+@media only screen and (max-width: 550px) {
+    .carousel-image-wrapper{
+        height: 80%;
+        top:0;
     }
 }
-@media only screen and (max-width: 800px) {
-    .carousel-caption h3{
-        font-size: 20px;
-        margin: 0;
+@media only screen and (max-width: 400px) {
+    .carousel-caption-container h1{
+        font-size: 2rem;
     }
-    .carousel-caption p{
-        font-size: 15px;
-        margin: 0;
+    .carousel-caption-container p{
+        font-size: .9rem;
     }
-}
-@media only screen and (max-width: 600px) {
-    .carousel-caption h3{
-        font-size: 18px;
-    }
-    .carousel-caption p{
-        font-size: 12px;
-    }
-}
-@media only screen and (max-width: 500px) {
-    .carousel-caption h3{
-        font-size: 15px;
-    }
-    .carousel-caption p{
-        font-size: 12px;
-    }
-}
-@media only screen and (max-width: 450px) {
-    .carousel-caption div{
-        padding: 5px;
-    }
-    .carousel-caption h3{
-        font-size: 12px;
-    }
-    .carousel-caption p{
-        font-size: 12px;
+    .carousel-caption-container{
+        padding: 10px;
     }
 }
