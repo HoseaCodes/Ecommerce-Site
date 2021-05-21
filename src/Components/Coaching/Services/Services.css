@@ -53,16 +53,42 @@
 }
 
 .coaching-buy-btn-group {
-  width: 60%;
+  width: 50%;
+}
+
+@media screen and (max-width: 1488px) {
+  .coaching-buy-btn-group {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1288px) {
+  .coaching-buy-btn-group {
+    width: 85%;
+  }
+}
+@media screen and (max-width: 1098px) {
+  .coaching-buy-btn-group {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1550px) and (min-width: 1250px) {
+  #services .card-img-top {
+    width: 40vh;
+  }
+}
+@media screen and (max-width: 1250px) and (min-width: 992px) {
+  #services .card-img-top {
+    width: 33vh;
+  }
 }
 
 @media screen and (max-width: 992px) {
+  .coaching-buy-btn-group {
+    width: 50%;
+  }
   #services {
     margin-left: 0;
     width: 100%;
-  }
-  #services button {
-    width: 50%;
   }
 
   #services li {
@@ -71,6 +97,9 @@
 }
 
 @media screen and (max-width: 768px) {
+  .coaching-buy-btn-group {
+    width: 45%;
+  }
   #services li {
     margin-top: 25%;
   }
