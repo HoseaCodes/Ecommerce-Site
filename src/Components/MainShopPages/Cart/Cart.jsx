@@ -5,6 +5,7 @@ import axios from "axios";
 import PaypalButton from "./PaypalButton";
 import NavBar from "../../NavBar/NavBar";
 import { Link } from "react-router-dom";
+import Footer from "../../Footer/Footer";
 
 const Cart = () => {
 	const state = useContext(GlobalState);
@@ -113,10 +114,12 @@ const Cart = () => {
 						</div>
 					</div>
 				</div>
+				<Footer/>
 			</>
 		);
 
 	return (
+	<>
 		<div className="cart-wrapper">
 			<NavBar />
 			<div className="cart-title-wrapper">
@@ -167,6 +170,8 @@ const Cart = () => {
 				</div>
 			</div>
 		</div>
+		<Footer/>
+	</>
 	);
 };
 
