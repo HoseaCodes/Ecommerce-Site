@@ -52,6 +52,7 @@
 .nav-item:hover {
   text-decoration: none;
   color: purple;
+  opacity: 1;
 }
 
 .nav-signin {
