@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -17,6 +18,7 @@ html{
   margin-right: auto;
   -webkit-box-shadow: 0px 0px 7px 3px rgba(0,0,0,0.13); 
   box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.13);
+  min-height: 100%;
 }
 .header-nav{
   max-width: 1900px;
