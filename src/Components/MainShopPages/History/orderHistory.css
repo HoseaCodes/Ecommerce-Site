@@ -1,7 +1,72 @@
+@font-face {
+    font-family: "Oregon";
+    src: url("../../../Fonts/Oregon_LDO/Oregon_LDO.ttf");
+}
+@font-face {
+    font-family: "NewYork";
+    src: url("../../../Fonts/newyork/newyork.woff");
+}
 .history-page {
-    overflow-x: au;
+    overflow-x: auto;
+    margin-top: 135px;
+    height: 100%;
+}
+.history-title-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px 0px 20px;
+}
+.history-title-wrapper h1{
+    font-family: "NewYork";
+    font-weight: 600;
+}
+.history-title-wrapper h2{
+    font-family: "Oregon";
+    font-size: 1.2rem;
+}
+/*details container*/
+.history-details-wrapper{
+    padding: 0px 20px;
+}
+.history-details-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px;
+    padding: 20px 0px;
+    border-top: 1px solid #0000001e;
+}
+.history-details-container h2{
+    font-size: .9rem;
+}
+.history-details-container h3{
+    font-size: 1rem;
+    font-weight: 400;
+}
+.history-details-container a:hover{
+    text-decoration: none;
+}
+.history-details{
+    display: flex;
+    flex-direction: column;
 }
 
+@media only screen and (max-width:600px){
+    .history-details-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 20px;
+        gap: 10px;
+    }
+}
+@media only screen and (max-width:400px){
+    .history-title-wrapper h1{
+        font-size: 2rem;
+        padding-right: 50px;
+    }
+    .history-title-wrapper h2{
+        font-size: 1rem;
+    }
+} 
+/* 
 .history-page h2, h4 {
     text-align: center;
     margin: 20px;
@@ -33,4 +98,4 @@ table a {
     width: 70px;
     height: 100px;
     object-fit: cover;
-}
+} */

@@ -4,6 +4,7 @@ import "./Cart.css";
 import axios from "axios";
 import PaypalButton from "./PaypalButton";
 import NavBar from "../../NavBar/NavBar";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 	const state = useContext(GlobalState);
@@ -116,34 +117,54 @@ const Cart = () => {
 		);
 
 	return (
-		<div>
+		<div className="cart-wrapper">
 			<NavBar />
+			<div className="cart-title-wrapper">
+				<h1>Your Bag</h1>
+				<Link to="/shop">Continue Shopping</Link>
+			</div>
 			{cart.map((product) => (
-				<div className="detail cart" key={product._id}>
-					<img
-						src={product.images.url}
-						alt="Product Detail"
-						className="img_container"
-					/>
-					<div className="box-detail">
-						<h2>{product.title}</h2>
-						<h3>$ {product.price * product.quantity}</h3>
-						<p>{product.description}</p>
-						<p>{product.content}</p>
-						<div className="amount">
-							<button onClick={() => decrement(product._id)}> - </button>
-							<span>{product.quantity}</span>
-							<button onClick={() => increment(product._id)}> + </button>
+				<div className="cart-details-wrapper" key={product._id}>
+					<div className="cart-details-container">
+						<div className="product-container">
+							<img
+								src={product.images.url}
+								alt="Product Detail"
+								className="cart-img"
+							/>
+							<div>	
+								<h3>PRODUCT</h3>
+								<h2>{product.title}</h2>
+								<p>{product.description}</p>
+							</div>
 						</div>
-						<div className="delete" onClick={() => removeProduct(product._id)}>
-							X
+						<div className="box-detail-delete" onClick={() => removeProduct(product._id)}>
+							Remove
+						</div>
+						<div className="box-detail-product">
+							<h3>PRICE</h3>
+							<h2>{product.price}</h2>
+						</div>
+						<div className="box-detail-product">
+							<h3>QTY</h3>
+							<div>
+								<span onClick={() => decrement(product._id)}> - </span>
+								{product.quantity}
+								<span onClick={() => increment(product._id)}> + </span>
+							</div>
+						</div>
+						<div className="box-detail-product">
+							<h3>SUBTOTAL</h3>
+							<h2>$ {(product.price * product.quantity).toFixed(2)}</h2>
 						</div>
 					</div>
 				</div>
 			))}
-			<div className="total">
-				<h3>Total: $ {total}</h3>
-				<PaypalButton total={total} tranSuccess={tranSuccess} />
+			<div className="total-products-wrapper">
+				<div className="total-products-container">
+					<h3>Total: <span>${total}</span></h3>
+					<PaypalButton total={total} tranSuccess={tranSuccess} />
+				</div>
 			</div>
 		</div>
 	);
