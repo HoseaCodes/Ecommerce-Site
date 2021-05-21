@@ -23,7 +23,7 @@ import DetailProduct from "./Components/MainShopPages/DetailProduct/DetailProduc
 import Category from "./Components/MainShopPages/Categories/categories";
 import Create from "./Components/MainShopPages/CreateProduct/createProduct";
 import NotFound from "./Components/MainShopPages/Utils/NotFound/NotFound";
-import { DataProvider, GlobalState } from "./GlobalState";
+import { DataProvider } from "./GlobalState";
 import UserAPI from "./API/UserAPI";
 import axios from "axios";
 
@@ -39,8 +39,6 @@ const styles = {
 		transition: "0.5s",
 	},
 };
-
-// const Global = React.createContext(GlobalState);
 
 // On page load loading feature
 const Loader = () => (
@@ -82,7 +80,8 @@ const App = () => {
 
 	return (
 		<>
-			{loading ? <Loader /> : null}
+			{loading ? <Loader /> : 
+			
 			<BrowserRouter>
 				<Switch>
 					<DataProvider>
@@ -144,97 +143,11 @@ const App = () => {
 					</DataProvider>
 				</Switch>
 			</BrowserRouter>
+			}
+			
 		</>
 	);
 };
-// export default class App extends Component {
-// 	state = {
-// 		user: null,
-// 		authenticated: false,
-// 		loading: true,
-// 		isLoggedIn: Global.userAPI.isAdmin,
-// 		// isAdmin: Global.userAPI.isAdmin,
-// 	};
-
-// 	componentDidMount() {
-// 		// this simulates an async action, after which the component will render the content
-// 		demoAsyncCall().then(() => this.setState({ loading: false }));
-// 		// console.log(isLoggedInState);
-// 	}
-
-// 	// static contextType = GlobalState;
-
-// 	render() {
-// const global = this.context;
-// console.log(Global.Provider)
-// 	return (
-// 		<>
-// 			{loading ? <Loader /> : null}
-// 			<BrowserRouter>
-// 				<Switch>
-// 					<DataProvider>
-// 						<Route exact path="/blog" render={() => <BlogPage />} />
-// 						<Route
-// 							exact
-// 							path="/specificBlog/:id"
-// 							render={() => <SpecificBlogPage />}
-// 						/>
-// 						<Route path="/products" exact component={Products} />
-// 						<Route path="/detail/:id" exact component={DetailProduct} />
-// 						<Route
-// 							path="/login"
-// 							exact
-// 							component={this.state.isLoggedIn ? NotFound : Login}
-// 						/>
-// 						<Route
-// 							path="/register"
-// 							exact
-// 							component={this.state.isLoggedIn ? NotFound : Register}
-// 						/>
-// 						<Route
-// 							path="/category"
-// 							exact
-// 							component={this.state.isAdmin ? Category : NotFound}
-// 						/>
-// 						<Route
-// 							path="/create_product"
-// 							exact
-// 							component={this.state.isAdmin ? Create : NotFound}
-// 						/>
-// 						<Route
-// 							path="/edit_product"
-// 							exact
-// 							component={this.state.isAdmin ? Create : NotFound}
-// 						/>
-// 						<Route
-// 							path="/history"
-// 							exact
-// 							component={this.state.isLoggedIn ? OrderHistory : NotFound}
-// 						/>
-// 						<Route
-// 							path="/history/:id"
-// 							exact
-// 							component={this.state.isLoggedIn ? OrderDetails : NotFound}
-// 						/>
-// 						<Route path="/cart" exact component={Cart} />
-// 						{/* <Route path="*" exact component={NotFound} /> */}
-// 						<Route exact path="/admin" render={() => <Admin />} />
-// 						<Route exact path="/admin/addBlog" render={() => <AddBlog />} />
-// 						{/* <Error /> */}
-// 						<Route exact path="/" render={() => <Splash />} />
-// 						<Route exact path="/shop" render={() => <Shop />} />
-// 						<Route exact path="/coaching" render={() => <Coaching />} />
-// 						<Route exact path="/admin" render={() => <Admin />} />
-// 						<Route exact path="/about" render={() => <About />} />
-// 						<Route exact path="/contact" render={() => <Contact />} />
-// 						{/* <Error /> */}
-// 					</DataProvider>
-// 				</Switch>
-// 			</BrowserRouter>
-// 		</>
-// 	);
-// };
-// }
 
 export default App;
 

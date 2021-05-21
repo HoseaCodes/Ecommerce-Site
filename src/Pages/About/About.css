@@ -17,9 +17,17 @@
     url("../../Fonts/Photograph/Photograph\ Signature.woff") format("woff");
 }
 
+.about-wrapper {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .about-container {
   display: flex;
-  padding: 50px 20px 20px 20px;
+  padding: 8%;
   margin-top: 100px;
 }
 
@@ -35,7 +43,6 @@
 .about-text h2 {
   font-family: "New York";
   font-size: 1.5rem;
-  padding-bottom: 8%;
 }
 
 .about-text p {
@@ -96,6 +103,7 @@
 .about-hr {
   margin-bottom: 0% !important;
   color: gray;
+  margin-top: 0.5%;
 }
 
 .about-quote-container img {
@@ -105,26 +113,26 @@
   object-fit: cover;
 }
 @media only screen and (max-width: 1000px) {
-  .about-container{
+  .about-container {
     flex-direction: column-reverse;
   }
-  .about-img{
+  .about-img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     object-position: center top;
   }
-  .about-quote-div{
-    border:none;
-    margin:0;
+  .about-quote-div {
+    border: none;
+    margin: 0;
     padding: 20px 20px 0px 20px;
   }
-  .about-quote-container{
+  .about-quote-container {
     width: 100%;
     flex-direction: column;
   }
   .about-quote-container img {
     width: 100%;
-    padding:0px 40px 40px 40px;
+    padding: 0px 40px 40px 40px;
     max-width: 720px;
     height: 400px;
   }
