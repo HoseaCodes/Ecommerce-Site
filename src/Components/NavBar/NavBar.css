@@ -25,13 +25,13 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--bg);
+  background-color: whitesmoke;
   font-family: "Oregon";
 }
-.logo img{
+.logo img {
   width: 300px;
 }
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -62,64 +62,64 @@
 
 /* --------------------------------------- */
 /* Mobile Responsive */
-.dropdown-nav{
+.dropdown-nav {
   display: none;
 }
-.hamburger3{
-	display: none;
-	z-index: 10000;
-	background-color: transparent;
-	color: white;
-	border:none;
-	cursor: pointer;
-	position: fixed;
-	top: 70px;
-	right: 15px;
+.hamburger3 {
+  display: none;
+  z-index: 10000;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 70px;
+  right: 15px;
 }
-.hamburger3:hover{
-	color: #40BFF8;
+.hamburger3:hover {
+  color: #40bff8;
 }
 .checker {
-    display: none;
+  display: none;
 }
-.dropdown-sidebar{
+.dropdown-sidebar {
   display: none;
   flex-direction: column;
   position: fixed;
   top: 124px;
-  right:0;
+  right: 0;
   overflow: auto;
   z-index: 0;
   background-color: white;
-  -webkit-box-shadow: -5px 12px 10px 0px rgba(0,0,0,0.22); 
-  box-shadow: -5px 12px 12px 0px rgba(0,0,0,0.22);
+  -webkit-box-shadow: -5px 12px 10px 0px rgba(0, 0, 0, 0.22);
+  box-shadow: -5px 12px 12px 0px rgba(0, 0, 0, 0.22);
   height: 100%;
 }
 @media only screen and (max-width: 1200px) {
-  .main-nav{
+  .main-nav {
     display: none !important;
   }
-  .dropdown-nav{
+  .dropdown-nav {
     display: flex;
     justify-content: center;
     background-color: #f5f5f5;
     padding: 10px;
   }
-  .dropdown-sidebar{
+  .dropdown-sidebar {
     display: flex;
   }
-  .hamburger3{
-  display: block;
+  .hamburger3 {
+    display: block;
   }
-  #bar-checker2:not(:checked) ~ .dropdown-sidebar{
-      transform: translateX(350px);
+  #bar-checker2:not(:checked) ~ .dropdown-sidebar {
+    transform: translateX(350px);
   }
-  #bar-checker2:checked ~ .dropdown-sidebar{
-      transform: translateX(0px);
+  #bar-checker2:checked ~ .dropdown-sidebar {
+    transform: translateX(0px);
   }
 }
 @media only screen and (max-width: 500px) {
-  .logo img{
-    width: 150px;
+  .logo img {
+    width: 14rem;
   }
 }
