@@ -5,7 +5,8 @@ const Blog = require("../models/blogModel");
 
 router.post(
 	"/postBlog",
-	/* auth, authAdmin, */ async (req, res) => {
+
+	/* auth, authAdmin, */ async (req, res, next) => {
 		const {
 			category,
 			name,
@@ -17,12 +18,12 @@ router.post(
 			subHeading,
 			tags,
 			link,
-		} = req.body;
+		} = req.body.blog;
 		if (
 			!category ||
 			!name ||
 			!date ||
-			// !img ||
+			!img ||
 			!title ||
 			!type ||
 			!info ||
@@ -37,7 +38,7 @@ router.post(
 				category: category,
 				name: name,
 				date: date,
-				// img:img,
+				img: img,
 				title: title,
 				type: type,
 				info: info,
@@ -50,6 +51,63 @@ router.post(
 			return res
 				.status(201)
 				.json({ message: "Successfully added blog", blogID: createdBlog._id });
+		} catch (error) {
+			return res.status(401).json({ msg: error });
+		}
+	}
+);
+router.put(
+	"/updateBlog",
+
+	/* auth, authAdmin, */ async (req, res, next) => {
+		const {
+			category,
+			name,
+			date,
+			img,
+			title,
+			type,
+			info,
+			subHeading,
+			tags,
+			link,
+			id,
+		} = req.body.blog;
+		if (
+			!category ||
+			!name ||
+			!date ||
+			!img ||
+			!title ||
+			!type ||
+			!info ||
+			!subHeading ||
+			!tags ||
+			!link
+		) {
+			return res.status(401).json({ msg: "missing input, try again" });
+		}
+		try {
+			const updatedBlog = await Blog.findByIdAndUpdate(
+				{ _id: id },
+				{
+					category: category,
+					name: name,
+					date: date,
+					img: img,
+					title: title,
+					type: type,
+					info: info,
+					subHeading: subHeading,
+					tags: tags,
+					link: link,
+				}
+			);
+			console.log(updatedBlog);
+
+			return res
+				.status(201)
+				.json({ message: "Successfully updated blog", blog: updatedBlog });
 		} catch (error) {
 			return res.status(401).json({ msg: error });
 		}
@@ -71,7 +129,6 @@ router.get(
 router.get(
 	"/getBlog",
 	/* auth, authAdmin, */ async (req, res) => {
-		console.log(req.query);
 		if (!req.query[0]) {
 			return res.status(401).json({ msg: "Invalid Request: No ID provided" });
 		}

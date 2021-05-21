@@ -8,9 +8,6 @@ function CategoriesAPI() {
 	useEffect(() => {
 		const getCategories = async () => {
 			const res = await axios.get("/api/category");
-			console.log("test");
-
-			console.log(res);
 			setCategories(res.data);
 		};
 		getCategories();
