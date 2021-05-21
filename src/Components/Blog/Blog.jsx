@@ -10,7 +10,7 @@ class Blog extends React.Component {
 		super(props);
 		this.state = {
 			search: "",
-			// blogs: blogData.slice(0,2),
+			// blogs: blogData.slice(0, 2),
 			blogs: [],
 			loading: true,
 			newBlogs: {},
@@ -72,9 +72,7 @@ class Blog extends React.Component {
 						</section>
 					</div>
 				</div>
-				<div>
-					<p>Yp</p>
-				</div>
+				<div></div>
 			</div>
 		);
 	}

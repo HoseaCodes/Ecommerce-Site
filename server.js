@@ -11,15 +11,15 @@ const app = express();
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json({ limit: "100kb" }));
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cookieParser());
 app.use(cors());
-app.use(
-	fileUpload({
-		useTempFiles: true,
-	})
-);
+// app.use(
+// 	fileUpload({
+// 		useTempFiles: true,
+// 	})
+// );
 
 //Database
 require("./config/database");

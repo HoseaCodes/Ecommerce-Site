@@ -1,0 +1,96 @@
+.rdw-editor-toolbar {
+	position: absolute !important;
+	/* padding: 0 25%; */
+	top: -15%;
+	left: 10%;
+	right: 10%;
+	/* width: 100%; */
+	text-align: center;
+	z-index: 999;
+}
+
+.rdw-editor-main {
+	position: relative !important;
+	border: 1px solid black;
+}
+
+/* #edit-blog .row {
+	border: 1px solid black;
+} */
+
+#edit-blog label {
+	display: flex;
+}
+
+#edit-blog .editor-container {
+	position: relative;
+}
+
+#edit-blog {
+	border: 1px solid grey;
+}
+
+#edit-blog form {
+	margin: auto;
+	width: 90%;
+}
+
+#edit-blog input {
+	display: block;
+}
+
+.react-page-cell-insert-new {
+	width: 100% !important;
+}
+
+.react-page-editable {
+	width: 80%;
+}
+.editor {
+	margin: auto;
+	width: 100%;
+	border: 1px solid black;
+}
+
+.editor-label {
+	text-align: center;
+	margin: 5px 0;
+	border-bottom: 1px solid black;
+}
+
+#name-and-title {
+	width: 100%;
+	margin: auto;
+}
+
+#edit-blog .control-label {
+	/* width: 100px; */
+	float: left;
+}
+#edit-blog .form-group {
+	display: block;
+}
+
+#edit-blog .form-control {
+	margin: auto;
+	width: 100%;
+}
+
+/* #edit-blog .ce-toolbar {
+	display: none;
+} */
+/* #edit-blog .row,
+#edit-blog .col {
+	padding: 0;
+} */
+
+@media only screen and (max-width: 776px) {
+	#edit-blog {
+		margin-top: 20% !important;
+	}
+}
+@media only screen and (max-width: 576px) {
+	#edit-blog {
+		margin-top: 30% !important;
+	}
+}

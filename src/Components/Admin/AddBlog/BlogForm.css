@@ -14,23 +14,33 @@
 	border: 1px solid black;
 }
 
-/* #style-blog .row {
+/* #blog-form .row {
 	border: 1px solid black;
 } */
 
-#style-blog label {
+#blog-form label {
 	display: flex;
 }
 
-#style-blog .editor-container {
+#blog-form .editor-container {
 	position: relative;
 }
 
-#style-blog {
+/* #blog-form {
 	border: 1px solid grey;
-}
+} */
 
-#style-blog form {
+#blog-form form {
 	margin: auto;
 	width: 90%;
+}
+
+#blog-form input {
+	display: block;
+}
+
+@screen (max-width: 500px) {
+	#blog-form {
+		margin-top: 5% !important;
+	}
 }
