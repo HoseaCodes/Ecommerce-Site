@@ -50,14 +50,9 @@
 }
 
 .nav-item:hover {
-<<<<<<< Updated upstream
   text-decoration: none;
   color: purple;
   opacity: 1;
-=======
-	text-decoration: none;
-	color: purple;
->>>>>>> Stashed changes
 }
 
 .nav-signin {
@@ -69,7 +64,6 @@
 /* --------------------------------------- */
 /* Mobile Responsive */
 .dropdown-nav {
-<<<<<<< Updated upstream
   display: none;
 }
 .hamburger3 {
@@ -129,65 +123,4 @@
   .logo img {
     width: 14rem;
   }
-=======
-	display: none;
-}
-.hamburger3 {
-	display: none;
-	z-index: 10000;
-	background-color: transparent;
-	color: white;
-	border: none;
-	cursor: pointer;
-	position: fixed;
-	top: 70px;
-	right: 15px;
-}
-.hamburger3:hover {
-	color: #40bff8;
-}
-.checker {
-	display: none;
-}
-.dropdown-sidebar {
-	display: none;
-	flex-direction: column;
-	position: fixed;
-	top: 124px;
-	right: 0;
-	overflow: auto;
-	z-index: 0;
-	background-color: white;
-	-webkit-box-shadow: -5px 12px 10px 0px rgba(0, 0, 0, 0.22);
-	box-shadow: -5px 12px 12px 0px rgba(0, 0, 0, 0.22);
-	height: 100%;
-}
-@media only screen and (max-width: 1200px) {
-	.main-nav {
-		display: none !important;
-	}
-	.dropdown-nav {
-		display: flex;
-		justify-content: center;
-		background-color: #f5f5f5;
-		padding: 10px;
-	}
-	.dropdown-sidebar {
-		display: flex;
-	}
-	.hamburger3 {
-		display: block;
-	}
-	#bar-checker2:not(:checked) ~ .dropdown-sidebar {
-		transform: translateX(350px);
-	}
-	#bar-checker2:checked ~ .dropdown-sidebar {
-		transform: translateX(0px);
-	}
-}
-@media only screen and (max-width: 500px) {
-	.logo img {
-		width: 150px;
-	}
->>>>>>> Stashed changes
 }
